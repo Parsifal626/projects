@@ -11,7 +11,9 @@ int main(void)
     {
         height = get_int("Height: ");
     }
- for (int i = 0; i < n; i++)
+    while (height < 1 || height > 8);
+
+    for (int i = 1; i < height; i++)
 {
     for (int j = 0; j < n; j++)
     {
