@@ -15,9 +15,15 @@ int main(void)
 
     for (int i = 1; i < height; i++)
 {
-    for (int j = 0; j < n; j++)
+    for (spaces = (height - i); spaces > 0; spaces --)
+    {
+        printf(" ");
+    }
+    for (hashes = 1; hashes <= (i); hashes++)
     {
         printf("#");
     }
     printf("\n");
+}
+return 0
 }
