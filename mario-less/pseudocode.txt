@@ -1,2 +1,5 @@
-User type a number
-If number less than 1 and more than 8  - Text: 'Sorry, buddy, you have to choice another number' and retrn to step 1.
+User type a number height;
+If number less than 1 and more than 8  - Text: 'Sorry, buddy, you have to choice another number height' and retrn to step 1.;
+repeat X number hashes (from 1 to x);
+print 1 hash and go to the new line
+print one more hash than previous line until line will not reach the number of height.
