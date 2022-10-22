@@ -1,0 +1,2 @@
+User type a number
+If number less than 1 and more than 8  - Text:Sorry, buddy, you have to choice another number and retutn to step 1.
