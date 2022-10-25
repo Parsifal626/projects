@@ -43,7 +43,7 @@ int get_cents(void)
         n = get_int("Type number of cents\n");
     }
     while (n < 0);
-    printf (Your number of cents is: %i\n", n);
+    printf ("Your number of cents is: %i\n", n);
     return n;
 }
 
@@ -56,14 +56,14 @@ int calculate_quarters(int cents)
     }
     else
     {
-        quarters = 0
+        quarters = 0;
     }
     return quarters;
 }
 
 int calculate_dimes(int cents)
 {
-    int dimes:
+    int dimes;
     if(cents>=10)
     {
         dimes = cents / 10;
