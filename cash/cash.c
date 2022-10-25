@@ -37,26 +37,56 @@ int main(void)
 
 int get_cents(void)
 {
-    // TODO
-    return 0;
+    int n;
+    do
+    {
+        n = get_int("Type number of cents\n");
+    }
+    while (n < 0);
+    printf (Your number of cents is: %i\n", n);
+    return n;
 }
 
 int calculate_quarters(int cents)
 {
-    // TODO
-    return 0;
+    int quarters;
+    if (cents>=25)
+    {
+        quarters = cents / 25;
+    }
+    else
+    {
+        quarters = 0
+    }
+    return quarters;
 }
 
 int calculate_dimes(int cents)
 {
-    // TODO
-    return 0;
+    int dimes:
+    if(cents>=10)
+    {
+        dimes = cents / 10;
+    }
+    else
+    {
+        dimes = 0;
+    }
+    return dimes;
 }
 
 int calculate_nickels(int cents)
 {
-    // TODO
-    return 0;
+    int nickels;
+    if(cents>=5)
+    {
+        nickels = cents / 5;
+    }
+    else
+    {
+        nickels = 0;
+    }
+    return nickels;
 }
 
 int calculate_pennies(int cents)
