@@ -67,7 +67,7 @@ int compute_score(string word);
             n += 1;
         }
     }
-}
+
     return score;
     // TODO: Compute and return score for string
 }
