@@ -63,6 +63,7 @@ int compute_score(string word);
                 }
             }
         }
+        else
         {
             n += 1;
         }
