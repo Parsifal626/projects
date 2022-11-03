@@ -36,20 +36,34 @@ int main(void)
 int compute_score(string word)
 {
     int score = 0;
-    for(int n = 0 n < strlen(word), n++)
+    for (int n = 0 n < strlen(word), n++)
     {
-        if(isupper(word[n]))
+        if (isupper(word[n]))
         {
-            for(int m = 0; m < sizeof(capital_letters); m++)
+            for (int m = 0; m < sizeof(capital_letters); m++)
             {
-                if(word[n] == capital_letter[m])
+                if (word[n] == capital_letter[m])
                 {
                     temp_Points[n] = POINTS[m];
                     score += temp_Points[n];
                 }
             }
         }
-        
+        else if (islower(word[n]))
+        {
+            for (int m = 0; m < sizeof(small_letters); m++)
+            {
+                if (word[n] == smal_letters[m])
+                {
+                    temp_Points[n] = POINTS[m];
+                    score += temp_Points[n];
+                }
+            }
+        }
+        {
+            n += 1;
+        }
     }
+    return score;
     // TODO: Compute and return score for string
 }
