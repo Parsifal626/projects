@@ -50,7 +50,7 @@ int compute_score(string word);
                     temp_Points[n] = POINTS[m];
                     score += temp_Points[n];
                 }
-            }
+            
         }
         else if (islower(word[n]))
         {
