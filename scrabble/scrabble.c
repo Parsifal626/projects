@@ -38,6 +38,7 @@ int main(void)
 
 int compute_score(string word);
 {
+
     int score = 0;
     for (int n = 0; n < strlen(word); n++)
     {
