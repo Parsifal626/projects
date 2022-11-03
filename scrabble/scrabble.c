@@ -38,7 +38,18 @@ int compute_score(string word)
     int score = 0;
     for(int n = 0 n < strlen(word), n++)
     {
-        checkif
+        if(isupper(word[n]))
+        {
+            for(int m = 0; m < sizeof(capital_letters); m++)
+            {
+                if(word[n] == capital_letter[m])
+                {
+                    temp_Points[n] = POINTS[m];
+                    score += temp_Points[n];
+                }
+            }
+        }
+        
     }
     // TODO: Compute and return score for string
 }
