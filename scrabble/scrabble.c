@@ -36,7 +36,7 @@ int main(void)
     }
 }
 
-int compute_score(string word);
+int compute_score(string word)
 {
     int score = 0;
 
@@ -44,11 +44,11 @@ int compute_score(string word);
     {
         if (isupper(word[n]))
         {
-            score = score + POINTS(word[n] - 65);
+            score = score + POINTS[word[n] - 65];
         }
         if (islower(word[n]))
         {
-            score = score + POINTS(word[n] - 97);
+            score = score + POINTS[word[n] - 97];
         }
     }
     return score;
