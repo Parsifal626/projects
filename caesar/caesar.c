@@ -15,7 +15,18 @@ if (argc != 2)
 
     else if (argc == 2)
     {
-         
+         const int KEY = atoi(argv[1])
+         bool isKeyValid = true;
+         int len = strlen(arg[1]);
+         for (int i = 0; i < len; i++)
+         {
+            if (isdifit(argv[1][i]) == false)
+            {
+                isKeyValid = false;
+
+                i = len;
+            }
+         }
     }
         for (int i = 0; i < strlen(argv[1]); i++)
         {
