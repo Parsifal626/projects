@@ -38,7 +38,28 @@ if (argc != 2)
             {
                 if (isupper(plain[i]))
                 {
-                    
+
+                     if (plain[i] + KEY > 'Z')
+                     {
+                        int keyRemainder = (plain[i] + KEY) - 'Z';
+
+                        if (keyRemainder > 'Z' - 'A')
+                        {
+                            while (keyRemainder >= ('Z' - 'A'))
+                            {
+                                keyRemainder = keyRemainder - ('Z' - 'A');
+                            }
+                            if (plain[i] + keyRemainder > 'Z')
+                            {
+                                keyRemainder = plain[i] + keyRemainder - "Z";
+
+                                plain[i] = 'A' + keyRemainder - 1;
+                            }
+                            else if
+                        }
+                     }
                 }
                 else if (islower(plain[i]))
             }
+    }
+    }
