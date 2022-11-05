@@ -43,33 +43,36 @@ if (argc != 2)
                      {
                         int keyRemainder = (plain[i] + KEY) - 'Z';
 
-                        if (keyRemainder > 'Z' - 'A')
+                        if (keyRemainder > 'z' - 'a')
                         {
-                            while (keyRemainder >= ('Z' - 'A'))
+                            while (keyRemainder >= ('z' - 'a'))
                             {
-                                keyRemainder = keyRemainder - ('Z' - 'A');
+                                keyRemainder = keyRemainder - ('z' - 'a');
                             }
-                            if (plain[i] + keyRemainder > 'Z')
+                            if (plain[i] + keyRemainder > 'z')
                             {
-                                keyRemainder = plain[i] + keyRemainder - "Z";
+                                keyRemainder = plain[i] + keyRemainder - "z";
 
-                                plain[i] = 'A' + keyRemainder - 1;
+                                plain[i] = 'a' + keyRemainder - 1;
                             }
                             else
                             {
-                                plain[i] = 'A' + keyRemainder - 1;
+                                plain[i] = 'a' + keyRemainder - 1;
                             }
                             else
                             {
-                                plain[i] = 'A' + keyRemainder - 1;
+                                plain[i] = 'a' + keyRemainder - 1;
                             }
                         }
-                     else if (plain[i] + KEY <= 'Z')
+                     else if (plain[i] + KEY <= 'z')
                      {
                         plain[i] = plain[i] + KEY
                      }
-                     }
-            
+                 }
+           }
+     }
+}
+
                 else if (islower(plain[i]))
             }
     }
