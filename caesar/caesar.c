@@ -64,12 +64,12 @@ if (argc != 2)
                                 plain[i] = 'A' + keyRemainder - 1;
                             }
                         }
-                     else if
+                     else if (plain[i] + KEY <= 'Z')
                      {
-                        plai
+                        plain[i] = plain[i] + KEY
                      }
                      }
-                }
+            
                 else if (islower(plain[i]))
             }
     }
