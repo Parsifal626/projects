@@ -1,11 +1,15 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <ctype.h>
+#include <stdlib.h>
+#include <string.h>
 
 int main(int argc, string argv[])
 {
-if (argc == 2)
+if (argc != 2)
     {
-        // Iterates on the key in command line and ensures it is a positive integer
+        printf("Usage: ./caesar key.\");
+    }
         for (int i = 0; i < strlen(argv[1]); i++)
         {
             // Returns error message if key includes anything other than digits
