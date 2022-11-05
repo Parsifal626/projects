@@ -70,7 +70,14 @@ if (argc != 2)
                      }
                  }
            }
+
+           
      }
+     else
+    {
+        printf("Usage: ./caesar key\n");
+    }
+
 }
 
                 else if (islower(plain[i]))
