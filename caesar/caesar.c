@@ -65,6 +65,9 @@ if (argc != 2)
                             }
                         }
                      else if
+                     {
+                        plai
+                     }
                      }
                 }
                 else if (islower(plain[i]))
