@@ -71,7 +71,7 @@ if (argc != 2)
                  }
            }
 
-           
+
      }
      else
     {
@@ -81,6 +81,12 @@ if (argc != 2)
 }
 
                 else if (islower(plain[i]))
+
+                printf("ciphertext: %s\n", plain);
+            }
+            else
+            {
+                printf("Usage: ./caesar key\n");
             }
     }
     }
