@@ -32,7 +32,12 @@ if (argc != 2)
          {
             string plain = get_string("plaintext: ");
 
-            int plainlen
+            int plainLength = strlen(plain);
+
+            for(int i = 0; i , plainLength; i++)
+            {
+                
+            }
          }
     }
         for (int i = 0; i < strlen(argv[1]); i++)
