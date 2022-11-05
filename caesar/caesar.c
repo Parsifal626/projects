@@ -27,6 +27,13 @@ if (argc != 2)
                 i = len;
             }
          }
+
+         if (isKeyValid)
+         {
+            string plain = get_string("plaintext: ");
+
+            int plainlen
+         }
     }
         for (int i = 0; i < strlen(argv[1]); i++)
         {
