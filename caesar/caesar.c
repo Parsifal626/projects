@@ -8,19 +8,19 @@ int main(int argc, string argv[])
 {
 if (argc != 2)
     {
-        printf("Usage: ./caesar key.\");
+        printf("Usage: ./caesar key\n");
         printf("1");
-        return(1)
+        return(1);
     }
 
     else if (argc == 2)
     {
-         const int KEY = atoi(argv[1])
+         const int KEY = atoi(argv[1]);
          bool isKeyValid = true;
-         int len = strlen(arg[1]);
+         int len = strlen(argv[1]);
          for (int i = 0; i < len; i++)
          {
-            if (isdifit(argv[1][i]) == false)
+            if (isdigit(argv[1][i]) == false)
             {
                 isKeyValid = false;
 
