@@ -55,10 +55,9 @@ if (argc == 2)
                      {
                         plain[i] = plain[i] + KEY
                      }
-                 }
+                }
                 if (islower(plain[i]))
                 {
-
                      if (plain[i] + KEY > 'z')
                      {
                         int keyRemainder = (plain[i] + KEY) - ('z');
