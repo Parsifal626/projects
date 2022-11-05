@@ -55,8 +55,16 @@ if (argc != 2)
 
                                 plain[i] = 'A' + keyRemainder - 1;
                             }
-                            else if
+                            else
+                            {
+                                plain[i] = 'A' + keyRemainder - 1;
+                            }
+                            else
+                            {
+                                plain[i] = 'A' + keyRemainder - 1;
+                            }
                         }
+                     else if
                      }
                 }
                 else if (islower(plain[i]))
