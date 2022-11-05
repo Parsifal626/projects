@@ -6,14 +6,7 @@
 
 int main(int argc, string argv[])
 {
-if (argc != 2)
-    {
-        printf("Usage: ./caesar key\n");
-        printf("1");
-        return(1);
-    }
-
-    else if (argc == 2)
+if (argc == 2)
     {
          const int KEY = atoi(argv[1]);
          bool isKeyValid = true;
@@ -23,26 +16,20 @@ if (argc != 2)
             if (isdigit(argv[1][i]) == false)
             {
                 isKeyValid = false;
-
                 i = len;
             }
          }
-
          if (isKeyValid)
          {
             string plain = get_string("plaintext: ");
-
             int plainLength = strlen(plain);
-
             for(int i = 0; i < plainLength; i++)
             {
                 if (isupper(plain[i]))
                 {
-
                      if (plain[i] + KEY > 'Z')
                      {
                         int keyRemainder = (plain[i] + KEY) - 'Z';
-
                         if (keyRemainder > 'Z' - 'A')
                         {
                             while (keyRemainder >= ('Z' - 'A'))
@@ -108,11 +95,14 @@ if (argc != 2)
      else
     {
         printf("Usage: ./caesar key\n");
+        printf("1");
+        return (1);
     }
             }
-            else
+            else if (argc !=2)
             {
                 printf("Usage: ./caesar key\n");
+                printf("1");
+                return (1);
             }
-    }
     }
