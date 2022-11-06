@@ -62,7 +62,7 @@ if (argc == 2)
                      {
                         int keyRemainder = (plain[i] + KEY) - ('z');
 
-                        if (keyRemainder > 'z' - 'a')
+                        if (keyRemainder >= 'z' - 'a')
                         {
                             while (keyRemainder >= ('z' - 'a'))
                             {
