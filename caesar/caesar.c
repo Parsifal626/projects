@@ -38,7 +38,7 @@ if (argc == 2)
                             }
                             if (plain[i] + keyRemainder > 'Z')
                             {
-                                keyRemainder = plain[i] + keyRemainder - "Z";
+                                keyRemainder = plain[i] + keyRemainder - 'Z';
                                 plain[i] = 'A' + keyRemainder - 1;
                             }
                             else
@@ -53,7 +53,7 @@ if (argc == 2)
                         }
                      else if (plain[i] + KEY <= 'Z')
                      {
-                        plain[i] = plain[i] + KEY
+                        plain[i] = plain[i] + KEY;
                      }
                 }
                 if (islower(plain[i]))
@@ -70,7 +70,7 @@ if (argc == 2)
                             }
                             if (plain[i] + keyRemainder > 'z')
                             {
-                                keyRemainder = plain[i] + keyRemainder - "z";
+                                keyRemainder = plain[i] + keyRemainder - 'z';
                                 plain[i] = 'a' + keyRemainder - 1;
                             }
                             else
@@ -85,7 +85,7 @@ if (argc == 2)
                         }
                      else if (plain[i] + KEY <= 'z')
                      {
-                        plain[i] = plain[i] + KEY
+                        plain[i] = plain[i] + KEY;
                      }
                  }
            }
