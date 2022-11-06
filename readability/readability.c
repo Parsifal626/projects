@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
+#include <ctype.h>
 
 int main(void)
 {
@@ -11,7 +12,7 @@ int main(void)
     int words = 1;
     int sentences = 0;
 
-    for(int = 0; i < strlen(text); i++)
+    for (int = 0; i < strlen(text); i++)
     {
         if ((text[i] > 65 && text[i] < 90) || (text[i] > 97 && text[i] < 122))
         {
