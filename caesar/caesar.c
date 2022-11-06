@@ -98,7 +98,7 @@ if (argc == 2)
         return (1);
     }
             }
-            else if (argc !=2)
+            else if (argc != 2)
             {
                 printf("Usage: ./caesar key\n");
                 printf("1");
