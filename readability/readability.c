@@ -12,7 +12,7 @@ int main(void)
     int words = 1;
     int sentences = 0;
 
-    for (int = 0; i < strlen(text); i++)
+    for (int i = 0; i < strlen(text); i++)
     {
         if ((text[i] > 65 && text[i] < 90) || (text[i] > 97 && text[i] < 122))
         {
