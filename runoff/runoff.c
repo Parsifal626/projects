@@ -129,12 +129,30 @@ int main(int argc, string argv[])
 bool vote(int voter, int rank, string name)
 {
     // TODO
+    for (int x = 0; x < candidate_count; x++)
+    {
+        if (strcmp(name, candidate[x].name) == 0)
+        {
+            preferences[voter][rank] = x;
+        }
+    }
     return false;
 }
 
 // Tabulate votes for non-eliminated candidates
 void tabulate(void)
 {
+    for (int v = 0; v < voter_count; v++)
+    {
+        for (int r = 0; r < candidate_count; v++)
+        {
+            if(candidates[prefernces[v][r]].eliminated == false)
+            {
+                candidates[preferences[v][r]].votes++;
+                break;
+            }
+        }
+    }
     // TODO
     return;
 }
@@ -142,6 +160,14 @@ void tabulate(void)
 // Print the winner of the election, if there is one
 bool print_winner(void)
 {
+    for (int c = 0; c < candidate_count; c++)
+    {
+        if (candidates[c].votes > (voter_count * 0.5))
+        {
+            printf("%s\n", candidates[c].name);
+            return true;
+        }
+    }
     // TODO
     return false;
 }
@@ -149,13 +175,26 @@ bool print_winner(void)
 // Return the minimum number of votes any remaining candidate has
 int find_min(void)
 {
+    int min[1] = {0};
+    for ( int c = 0; c < candidate_count; c++)
+    {
+        if (candidates[c].votes > min[0])
+        {
+            min[0] = candidates[c].votes;
+        }
+    }
+
     // TODO
-    return 0;
+    return min[0];
 }
 
 // Return true if the election is tied between all candidates, false otherwise
 bool is_tie(int min)
 {
+    for (inc c = 0; c < candidate_count; c++)
+    {
+        if (candidates[c].votes != min && candidates[c].eliminated == false)
+    }
     // TODO
     return false;
 }
