@@ -1,11 +1,11 @@
 sort1 uses: Bubble sort
 
-How do you know?: TODO
+How do you know?: It Takes slightly less amount of time when sort3.
 
-sort2 uses: TODO
+sort2 uses: Merge sort
 
-How do you know?: TODO
+How do you know?: The fastest sort
 
-sort3 uses: TODO
+sort3 uses: Selection Sort
 
-How do you know?: TODO
+How do you know?: it takes the most time of all
