@@ -151,7 +151,7 @@ void tabulate(void)
     {
         for (int r = 0; r < candidate_count; v++)
         {
-            if(candidates[prefernces[v][r]].eliminated == false)
+            if(candidates[preferences[v][r]].eliminated == false)
             {
                 candidates[preferences[v][r]].votes++;
                 break;
@@ -196,7 +196,7 @@ int find_min(void)
 // Return true if the election is tied between all candidates, false otherwise
 bool is_tie(int min)
 {
-    for (inc c = 0; c < candidate_count; c++)
+    for (int c = 0; c < candidate_count; c++)
     {
         if (candidates[c].votes != min && candidates[c].eliminated == false)
     }
