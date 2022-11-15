@@ -199,9 +199,12 @@ bool is_tie(int min)
     for (int c = 0; c < candidate_count; c++)
     {
         if (candidates[c].votes != min && candidates[c].eliminated == false)
+        {
+            return false;
+        }
     }
     // TODO
-    return false;
+    return true;
 }
 
 // Eliminate the candidate (or candidates) in last place
