@@ -182,7 +182,7 @@ int find_min(void)
     int mini_v = MAX_VOTERS;
     for (int c = 0; c < candidate_count; c++)
     {
-        if (candidates[c].votes == false && candidates[c].votes < mini_v)
+        if (candidates[c].eliminated == false && candidates[c].votes < mini_v)
         {
             mini_v = candidates[c].votes;
         }
