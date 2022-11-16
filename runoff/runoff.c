@@ -132,9 +132,9 @@ bool vote(int voter, int rank, string name)
 {
     // TODO
     bool exist = false;
-    for (int x = 0; x < candidate_count; x++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        if(strcmp(name, candidates[x].name) == 0)
+        if(strcmp(name, candidates[i].name) == 0)
         {
             preferences[voter][rank] = x;
             exist = true;
