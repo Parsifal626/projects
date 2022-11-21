@@ -38,5 +38,7 @@ int main(int argc, char *argv[])
         free(filename);
         fclose(output_file);
         fclose(input_file);
+
+        
         return 0;
     }
