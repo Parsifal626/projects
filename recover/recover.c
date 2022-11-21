@@ -2,7 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-bool is_start_new_jpeg(BYTE)
+#define BLOCK_NAME_SIZE 512
+#define FILE_NAME_SIZE 8
+bool is_start_new_jpeg(BYTE);
 
 int main(int argc, char *argv[])
 {
@@ -11,12 +13,28 @@ int main(int argc, char *argv[])
         printf("Usage: ./recover IMG\n");
         return 1;
     }
-    FILE *input_file = fopen(argv[1], "r");
+    FILE* input_file = fopen(argv[1], "r");
     if (input_file == NULL)
     {
         printf("The programm cannot open");
-        return 2;
+        return 1;
     }
+
+    BYTE buffer[BLOCK_SIZE];
+
+    bool have_found_first_jpg = false;
+    while (fread(buffer, BLOCK_SIZE, 1, infile))
+    {
+        if(is_start_new_jpeg(buffer))
+        if(have_found_first_jpg)
+
+    }
+}
+bool is_start_new_jpeg(BYTE buffer[])
+{
+    
+}
+
 
     unsigned char buffer[512];
     int count_image = 0;
