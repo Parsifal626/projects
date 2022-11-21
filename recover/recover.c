@@ -23,42 +23,37 @@ int main(int argc, char *argv[])
     BYTE buffer[BLOCK_SIZE];
 
     bool have_found_first_jpg = false;
+    FILE* outfile;
     while (fread(buffer, BLOCK_SIZE, 1, infile))
     {
         if(is_start_new_jpeg(buffer))
-        if(have_found_first_jpg)
+        {
+            if(!have_found_first_jpg)
+            have_found_first_jpg = true;
+            else
+                fclose(outfile);
+                char filename[FILE_NAME_SIZE];
+                sprint(filename, "%03i.jpg", file_index++);
+                outfile = fopen(filename, "w");
+                if (outfile == NULL)
+                return 1;
+                fwrite(buffer, BLOCK_SIZE, 1, outfile);
 
+
+        }
+        else if (have_found_first_jpg)
+        fwrite(buffer, BLOCK_SIZE, 1, outfile);
     }
+}
+
+        fclose(input_file);
+        fclose(output_file);
+
+
+
 }
 bool is_start_new_jpeg(BYTE buffer[])
 {
     return (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
 }
 
-
-    unsigned char buffer[512];
-    int count_image = 0;
-    FILE *output_file = NULL;
-    char *filename = malloc(8 * sizeof(char));
-      while (fread(buffer, sizeof(char), 512, input_file))
-        {
-
-            if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
-            {
-                sprintf(filename, "%03i.jpg", count_image);
-                output_file = fopen(filename, "w");
-                count_image++;
-            }
-
-            if (output_file != NULL)
-            {
-                fwrite(buffer, sizeof(char), 512, output_file);
-            }
-        }
-
-        fclose(input_file);
-        fclose(output_file);
-        free(filename);
-
-        return 0;
-}
