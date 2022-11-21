@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
         char *input_file_name = argv[1];
         FILE *input_file = fopen(input_file_name, "r");
 
-        if (input_pointer == NULL)
+        if (input_file == NULL)
         {
             printf("The programm cannot open %s\n", input_file_name);
             return 2;
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     int count = 0;
     FILE *output_file = NULL;
     char *filename = malloc(8 * sizeof(char));
-    while (fread(&buffer, sizeof(char), 512, input_file))
+    while (fread(&buffer, sizeof(char), 512, output_file))
         {
 
             if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
