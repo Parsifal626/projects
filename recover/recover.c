@@ -22,20 +22,20 @@ int main(int argc, char *argv[])
     }
 
     BYTE buffer[BLOCK_SIZE];
-
+    int file_index = 0;
     bool have_found_first_jpg = false;
-    FILE* outfile;
-    while (fread(buffer, BLOCK_SIZE, 1, infile))
+    FILE* output_file;
+    while (fread(buffer, BLOCK_SIZE, 1, input_file))
     {
         if(is_start_new_jpeg(buffer))
         {
             if(!have_found_first_jpg)
             have_found_first_jpg = true;
             else
-                fclose(outfile);
+                fclose(output_file);
                 char filename[FILE_NAME_SIZE];
                 sprint(filename, "%03i.jpg", file_index++);
-                outfile = fopen(filename, "w");
+                output_file = fopen(filename, "w");
                 if (outfile == NULL)
                 return 1;
                 fwrite(buffer, BLOCK_SIZE, 1, outfile);
