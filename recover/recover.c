@@ -5,7 +5,7 @@
 #define BLOCK_SIZE 512
 #define FILE_NAME_SIZE 8
 typedef uint8_t BYTE;
-bool is_start_new_jpeg(BYTE buffer[]);
+bool is_start_new_jpeg(BYTE);
 int main(int argc, char *argv[])
 {
     if (argc != 2)
@@ -27,8 +27,8 @@ int main(int argc, char *argv[])
     while (fread(buffer, BLOCK_SIZE, 1, input_file))
     {
         if(is_start_new_jpeg(buffer))
-        {
-            if(!have_found_first_jpg)
+        if(!have_found_first_jpg)
+    }
             have_found_first_jpg = true;
             else
                 fclose(output_file);
