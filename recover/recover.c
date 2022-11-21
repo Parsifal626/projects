@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+typedef uint8_t BYTE;
 
 int main(int argc, char *argv[])
 {
@@ -9,7 +10,7 @@ int main(int argc, char *argv[])
         printf("Usage: ./recover card.raw");
         return 1;
     }
-    
+
     FILE *input_file = fopen(argv[1], "r");
     if (input_file == NULL)
     {
