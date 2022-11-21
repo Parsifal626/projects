@@ -12,8 +12,14 @@ int main(int argc, char *argv[])
     }
     else
     {
-        printf("Error: cannot open %s\n", input_file_name);
-        return 2;
+        char *input_file_name = argv[1];
+        FILE *input_pointer = fopen(input_file_name, "r");
+
+        if (input_pointer == NULL)
+        {
+            printf("Error: cannot open %s\n", input_file_name);
+            return 2;
+        }
     }
 
 }
