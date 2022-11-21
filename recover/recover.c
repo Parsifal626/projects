@@ -43,15 +43,15 @@ int main(int argc, char *argv[])
         else if (have_found_first_jpg)
         {
         fwrite(buffer, BLOCK_SIZE, 1, output_file);
-    }
+        }
 }
 
         fclose(input_file);
         fclose(output_file);
 
-
+}
 bool is_start_new_jpeg(BYTE buffer[])
 {
     return (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
 }
-}
+
