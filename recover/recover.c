@@ -4,7 +4,8 @@
 #include <stdint.h>
 #define BLOCK_NAME_SIZE 512
 #define FILE_NAME_SIZE 8
-bool is_start_new_jpeg(BYTE);
+typedef uint8_t BYTE;
+bool is_start_new_jpeg(BYTE buffer[]);
 
 int main(int argc, char *argv[])
 {
