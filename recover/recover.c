@@ -27,26 +27,21 @@ int main(int argc, char *argv[])
     char *filename = malloc(8 * sizeof(char));
     while (fread(&buffer, sizeof(char), 512, input_file))
         {
-            // If start of a new JPEG (0xff 0xd8 0xff 0xe*):
+
             if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
             {
-                // If not first JPEG, close previous
-                if (!(count == 0))
-                {
-                    fclose(img_pointer);
-                }
-                // Initialise file
-                sprintf(filename, "%03i.jpg", count);
-                img_pointer = fopen(filename, "w");
-                count++;
+                sprintf(filename, "%03i.jpg", count_image);
+                output_file = fopen(filename, "w");
+                count_image++;
             }
-            // If JPEG has been found, write to file
-            if (!(count == 0))
+
+            if (output_file != NULL)
             {
-                fwrite(&buffer, 512, 1, img_pointer);
+                fwrite(&buffer, sizeof(char), 512, output_file);
             }
         }
-        fclose(img_pointer);
-        fclose(img_pointer);
+        free(filename);
+        fclose(output_file);
+        fclose(input_file);
         return 0;
     }
