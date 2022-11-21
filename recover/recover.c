@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-typedef uint8_t BYTE;
+bool is_start_new_jpeg(BYTE)
 
 int main(int argc, char *argv[])
 {
