@@ -17,14 +17,14 @@ int main(int argc, char *argv[])
 
         if (input_pointer == NULL)
         {
-            printf("Error: cannot open %s\n", input_file_name);
+            printf("The programm cannot open %s\n", input_file_name);
             return 2;
         }
     }
-    BYTE buffer[512];
+    unsigned char buffer[512];
     int count = 0;
-    FILE *img_pointer = NULL;
-    char filename[8];
+    FILE *output_file = NULL;
+    char *filename = malloc(8 * sizeof(char));
     while (fread(&buffer, 512, 1, img_pointer) == 1)
         {
             // If start of a new JPEG (0xff 0xd8 0xff 0xe*):
