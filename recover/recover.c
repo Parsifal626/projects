@@ -31,8 +31,9 @@ int main(int argc, char *argv[])
         if(!have_found_first_jpg)
             have_found_first_jpg = true;
              else
+             {
                 fclose(output_file);
-
+             }
                 char filename[FILE_NAME_SIZE];
                 sprintf(filename, "%03i.jpg", file_index++);
                 output_file = fopen(filename, "w");
@@ -54,6 +55,6 @@ int main(int argc, char *argv[])
 }
 bool is_start_new_jpeg(BYTE buffer[])
 {
-    return buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+    return buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0;
 }
 
