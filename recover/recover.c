@@ -2,8 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-#define BLOCK_SIZE 512
-#define FILE_NAME_SIZE 8
+
 typedef uint8_t BYTE;
 bool is_start_new_jpeg(BYTE buffer[]);
 int main(int argc, char *argv[])
@@ -20,11 +19,11 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    BYTE buffer[BLOCK_SIZE];
+    BYTE buffer[512];
     int file_index = 0;
     bool have_found_first_jpg = false;
     FILE* output_file;
-    while (fread(buffer, BLOCK_SIZE, 1, input_file))
+    while (fread(buffer, 512, 1, input_file))
     {
         if(is_start_new_jpeg(buffer))
         {
@@ -34,17 +33,17 @@ int main(int argc, char *argv[])
              {
                 fclose(output_file);
              }
-                char filename[FILE_NAME_SIZE];
+                char filename[8];
                 sprintf(filename, "%03i.jpg", file_index++);
                 output_file = fopen(filename, "w");
                 if (output_file == NULL)
                     return 1;
-                fwrite(buffer, BLOCK_SIZE, 1, output_file);
+                fwrite(buffer, 512, 1, output_file);
         }
 
         else if (have_found_first_jpg)
         {
-        fwrite(buffer, BLOCK_SIZE, 1, output_file);
+        fwrite(buffer, 512, 1, output_file);
         }
     }
 
