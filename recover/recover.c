@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
         printf("Usage: ./recover IMG\n");
         return 1;
     }
-
+    char* input_file = argv[1];
     FILE* input_file = fopen(argv[1], "r");
     if (input_file == NULL)
     {
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     int count_image = 0;
     FILE *output_file = NULL;
     char *filename = malloc(8 * sizeof(char));
-    while (fread(buffer, sizeof(char), 512, input_file))
+      while (fread(buffer, sizeof(char), 512, input_file))
         {
 
             if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
