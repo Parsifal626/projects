@@ -4,11 +4,12 @@
 
 int main(int argc, char *argv[])
 {
-    if (argc !=2)
+    if (argc != 2)
     {
         printf("Usage: ./recover card.raw");
         return 1;
     }
+    
     FILE *input_file = fopen(argv[1], "r");
     if (input_file == NULL)
     {
