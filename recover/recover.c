@@ -33,8 +33,8 @@ int main(int argc, char *argv[])
             else
                 fclose(output_file);
 
-                char filename[FILE_SIZE];
-                sprint(filename, "%03i.jpg", file_index++);
+                char filename[FILE_NAME_SIZE];
+                sprintf(filename, "%03i.jpg", file_index++);
                 output_file = fopen(filename, "w");
                 if (output_file == NULL)
                 return 1;
