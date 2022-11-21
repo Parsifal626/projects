@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     if (input_file == NULL)
     {
         printf("The programm cannot open");
-        return 2;
+        return 1;
     }
 
     unsigned char buffer[512];
