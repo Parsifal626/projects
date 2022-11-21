@@ -9,34 +9,30 @@ int main(int argc, char *argv[])
         printf("Usage: ./recover card.raw\n");
         return 1;
     }
-    else
+    FILE *input_file = fopen(argv[1], "r");
+    if (input_file == NULL)
     {
-        char *input_file_name = argv[1];
-        FILE *input_file = fopen(input_file_name, "r");
-
-        if (input_file == NULL)
-        {
-            printf("The programm cannot open %s\n", input_file_name);
-            return 2;
-        }
+        printf("The programm cannot open %s\n", input_file_name);
+        return 2;
     }
+
     unsigned char buffer[512];
     int count_image = 0;
     FILE *output_file = NULL;
     char *filename = malloc(8 * sizeof(char));
-    while (fread(&buffer, sizeof(char), 512, output_file))
+    while (fread(buffer, sizeof(char), 512, input_file))
         {
 
             if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
             {
-                sprintf(filename, "%03i.jpg", count_image);
+                printf(filename, "%03i.jpg", count_image);
                 output_file = fopen(filename, "w");
                 count_image++;
             }
 
             if (output_file != NULL)
             {
-                fwrite(&buffer, sizeof(char), 512, output_file);
+                fwrite(buffer, sizeof(char), 512, output_file);
             }
         }
         free(filename);
