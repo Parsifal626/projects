@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-#define BLOCK_NAME_SIZE 512
-#define FILE_NAME_SIZE 8
+#define BLOCK_SIZE 512
+#define FILE_SIZE 8
 typedef uint8_t BYTE;
 bool is_start_new_jpeg(BYTE buffer[]);
 
@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
             else
                 fclose(output_file);
 
-                char filename[FILE_NAME_SIZE];
+                char filename[FILE_SIZE];
                 sprint(filename, "%03i.jpg", file_index++);
                 output_file = fopen(filename, "w");
                 if (output_file == NULL)
