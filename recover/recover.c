@@ -7,13 +7,13 @@ int main(int argc, char *argv[])
 {
     if (argc !=2)
     {
-        printf("Usage: ./recover image\n");
+        printf("Usage: ./recover card.raw\n");
         return 1;
     }
     else
     {
         char *input_file_name = argv[1];
-        FILE *input_pointer = fopen(input_file_name, "r");
+        FILE *input_file = fopen(input_file_name, "r");
 
         if (input_pointer == NULL)
         {
