@@ -27,11 +27,16 @@ int main(int argc, char *argv[])
     while (fread(buffer, BLOCK_SIZE, 1, input_file))
     {
         if(is_start_new_jpeg(buffer))
+        {
         if(!have_found_first_jpg)
-    }
             have_found_first_jpg = true;
-            else
+             else
                 fclose(output_file);
+                
+        }
+    }
+
+
 
                 char filename[FILE_NAME_SIZE];
                 sprintf(filename, "%03i.jpg", file_index++);
