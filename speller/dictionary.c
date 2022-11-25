@@ -17,10 +17,12 @@ typedef struct node
 node;
 
 // TODO: Choose number of buckets in hash table
-node *hashtable[HASHTABLE_SIZE];
+const unsigned int N = 1;
+long words = 0;
 
 // Hash table
-int word_count = 0;
+node *table[N];
+unsigned long hash_function(char *str);
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
@@ -28,9 +30,31 @@ bool check(const char *word)
     int n = strlen(word);
     char copy[n + 1];
     // TODO
-    copy [n] = '\0';
     for(int i = 0; i < n; i++)
-    
+    {
+        copy [i] = tolower(word[i]);
+    }
+    int copy_index = hash_function(copy);
+
+    node *head = table[copy_index];
+    node *head = table[copy_index];
+
+    node *cursor = head;
+    if (head != NULL)
+    {
+        while (cursor != NULL)
+        {
+            if (strcasecmp(copy.cursor -> word) == 0)
+            {
+                return true;
+            }
+            else
+            {
+                cursor = cursor -> next;
+            }
+        }
+    }
+
     return false;
 }
 
