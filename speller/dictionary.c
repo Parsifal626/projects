@@ -37,8 +37,6 @@ bool check(const char *word)
     int copy_index = hash_function(copy);
 
     node *head = table[copy_index];
-    node *head = table[copy_index];
-
     node *cursor = head;
     if (head != NULL)
     {
