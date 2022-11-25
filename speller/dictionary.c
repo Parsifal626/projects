@@ -22,7 +22,7 @@ const unsigned int N = 26;
 
 // Hash table
 node *table[N];
-int dict_size = 0;
+
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
@@ -77,7 +77,20 @@ bool load(const char *dictionary)
     char word [LENGTH+1];
     while (fscanf(file, "%s\n", word) != EOF)
 
-    node *n = malloc
+    node *n = malloc(sizeof(node));
+
+    if(n == NULL)
+    {
+        return false;
+    }
+    strcpy(n->word, word);
+    hash_value = hash(word);
+    n->next = table(hash_value);
+    table(hash_value) = n;
+    word_count++;
+}
+    fclose(file);
+    return true
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
