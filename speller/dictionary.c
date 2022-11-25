@@ -18,6 +18,7 @@ const unsigned int N = 26;
 
 // Hash table
 node *table[N];
+int dict_size = 0;
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
@@ -37,6 +38,12 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
+    FILE *dict_pointer = fopen(dictionary, "r");
+    if (dictionary == NULL)
+    {
+        printf("Unable to open %s\n, dictionary");
+        return false;
+    }
     return false;
 }
 
