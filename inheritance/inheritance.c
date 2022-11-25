@@ -42,7 +42,7 @@ person *create_family(int generations)
     // TODO: Allocate memory for new person
 
     person *psn = malloc(sizeof(person));
-    enum alleles {A, B, O};
+    enum Alleles { A, B, O };
 
     // If there are still generations left to create
     if (generations > 1)
@@ -69,8 +69,8 @@ person *create_family(int generations)
 
 
         // TODO: Randomly assign alleles
-        psn->parents[0] = random_allele();
-        psn->parents[1] = random_allele();
+        psn->alleles[0] = random_allele();
+        psn->alleles[1] = random_allele();
     }
 
 
@@ -83,19 +83,18 @@ void free_family(person *p)
 {
     // TODO: Handle base case
 
-    if ( *p == NULL)
+    if ( p == NULL)
     {
         return;
     }
 
     // TODO: Free parents recursively
 
-    free_family(&(*p)->parents[0]);
-    free_family(&(*p)->parents[1]);
+    free_family(p->parents[0]);
+    free_family(p->parents[1]);
 
     // TODO: Free child
-    free(*p);
-    *p = NULL;
+    free(p);
     return;
 
 }
