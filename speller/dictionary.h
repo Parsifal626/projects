@@ -1,5 +1,5 @@
 // Declares a dictionary's functionality
-
+#include <stdbool.h>
 #ifndef DICTIONARY_H
 #define DICTIONARY_H
 
