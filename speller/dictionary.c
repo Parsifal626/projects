@@ -66,6 +66,7 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
+
     // TODO
     FILE *dict_pointer = fopen(dictionary, "r");
     if (dictionary == NULL)
@@ -73,7 +74,10 @@ bool load(const char *dictionary)
         printf("Unable to open %s\n, dictionary");
         return false;
     }
-    return false;
+    char word [LENGTH+1];
+    while (fscanf(file, "%s\n", word) != EOF)
+
+    node *n = malloc
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
