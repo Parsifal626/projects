@@ -1,9 +1,12 @@
 // Implements a dictionary's functionality
-
+#include <stdio.h>
+#include <cs50.h>
+#include <string.h>
 #include <ctype.h>
 #include <stdbool.h>
 
 #include "dictionary.h"
+#define HASHTABLE_SIZE 1985
 
 // Represents a node in a hash table
 typedef struct node
