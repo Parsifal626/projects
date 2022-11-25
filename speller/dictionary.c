@@ -17,18 +17,20 @@ typedef struct node
 node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 26;
+node *hashtable[HASHTABLE_SIZE];
 
 // Hash table
-node *table[N];
-int dict_size = 0;
+int word_count = 0;
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    FILE *dict_pointer = fopen(word, "r");
-    if (word = NULL)
+    int n = strlen(word);
+    char copy[n + 1];
     // TODO
+    copy [n] = '\0';
+    for(int i = 0; i < n; i++)
+    
     return false;
 }
 
