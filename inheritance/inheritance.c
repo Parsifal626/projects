@@ -84,7 +84,7 @@ person *create_family(int generations)
             }
             else
             {
-                return O;
+                return '';
             }
         }
 
