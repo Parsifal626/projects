@@ -23,6 +23,8 @@ int dict_size = 0;
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
+    FILE *dict_pointer = fopen(word, "r");
+    if (word = NULL)
     // TODO
     return false;
 }
