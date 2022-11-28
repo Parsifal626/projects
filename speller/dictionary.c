@@ -33,32 +33,16 @@ bool check(const char *word)
     node *n;
     n = table[number];
 
-    int n = strlen(word);
-    char copy[n + 1];
-    // TODO
-    for(int i = 0; i < n; i++)
-    {
-        lword[i] = tolower(word[i]);
-    }
-    lword[n] = '\0';
-    int hash_code = hash(lword);
-
-    node *head = table[copy_index];
-    node *cursor = head;
-    if (head != NULL)
-    {
-        while (cursor != NULL)
-        {
-            if (strcasecmp(copy.cursor -> word) == 0)
+    while (n->next != NULL)
+    ---------------------------
+{
+            if (strcasecmp(n->word, word) == 0)
             {
                 return true;
             }
-            else
-            {
-                cursor = cursor -> next;
-            }
-        }
-    }
+            n = n->next;
+}
+
 
     return false;
 }
