@@ -22,21 +22,20 @@ const unsigned int N = 26;
 
 // Hash table
 node *table[N];
-unsigned int word_count;
-unsigned int hash_value;
+int dict_size = 0;
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
     int n = strlen(word);
     char copy[n + 1];
-    copy[n] = '\0'
     // TODO
     for(int i = 0; i < n; i++)
     {
-        copy [i] = tolower(word[i]);
+        lword[i] = tolower(word[i]);
     }
-    int copy_index = hash_function(copy);
+    lword[n] = '\0';
+    int hash_code = hash(lword);
 
     node *head = table[copy_index];
     node *cursor = head;
