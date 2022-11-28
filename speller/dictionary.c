@@ -94,8 +94,8 @@ bool load(const char *dictionary)
         return false;
     }
     strcpy(n->word, load);
-    n->next = table(hash_value);
-    table(hash_value) = n;
+    n->next = table(number);
+    table(number) = n;
     word_count++;
 }
     free(p);
