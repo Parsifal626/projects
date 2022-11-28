@@ -43,8 +43,6 @@ bool check(const char *word)
             }
             n = n->next;
 }
-
-
     return false;
 }
 
