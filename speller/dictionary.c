@@ -32,13 +32,12 @@ bool check(const char *word)
     unsigned int number;
     number = hash(word);
 
-    node *n;
-    n = table[number];
+    node *n = table[number];
 
     while (n->next != NULL)
 
 {
-            if (strcasecmp(n->word, word) == 0)
+            if (strcasecmp(word, n->word) == 0)
             {
                 return true;
             }
