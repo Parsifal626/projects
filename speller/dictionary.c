@@ -85,7 +85,7 @@ bool load(const char *dictionary)
         table[i] = p;
     }
 
-    while(fscanf(F, "%s", word) != EOF)
+    while(fscanf(F, "%s", temp) != EOF)
     {
         printf("%s", temp);
         number = hash(temp);
