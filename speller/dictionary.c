@@ -73,7 +73,7 @@ bool load(const char *dictionary)
     {
         return false;
     }
-    char temp [LENGTH + 1];
+    char word [LENGTH + 1];
 
     unsigned int number;
 
@@ -84,7 +84,7 @@ bool load(const char *dictionary)
         table[i] = p;
     }
 
-    while(fscanf(F, "%s", temp) != EOF)
+    while(fscanf(F, "%s", word) != EOF)
     {
         printf("%s", temp);
         number = hash(temp);
