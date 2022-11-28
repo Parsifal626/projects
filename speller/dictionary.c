@@ -22,11 +22,17 @@ const unsigned int N = 26;
 
 // Hash table
 node *table[N];
-int dict_size = 0;
+int n_size = 0;
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
+    unsigned int number;
+    number = hash(word);
+
+    node *n;
+    n = table[number];
+
     int n = strlen(word);
     char copy[n + 1];
     // TODO
