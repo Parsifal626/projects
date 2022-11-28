@@ -34,7 +34,7 @@ bool check(const char *word)
     n = table[number];
 
     while (n->next != NULL)
-    ---------------------------
+
 {
             if (strcasecmp(n->word, word) == 0)
             {
@@ -80,19 +80,26 @@ bool load(const char *dictionary)
         p->next = NULL;
         table[i] = p;
     }
-    
+
+    while(fscanf(F, "%s", temp) != EOF)
+    {
+        printf("%s", temp);
+        number = hash(temp);
+
+        node *n = malloc(sizeof(node));
+
 
     if(n == NULL)
     {
         return false;
     }
     strcpy(n->word, word);
-    hash_value = hash(word);
     n->next = table(hash_value);
     table(hash_value) = n;
     word_count++;
 }
-    fclose(file);
+    free(p);
+    fclose(F);
     return true
 }
 
@@ -100,12 +107,18 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    return 0;
+    return size_n;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
+    for (int i = 0; I < N; i++)
+    {
+        node *temp = NULL;
+        node *dlt = NULL;
+        free(dlt);
+    }
     // TODO
-    return false;
+    return true;
 }
