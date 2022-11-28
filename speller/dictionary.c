@@ -51,7 +51,12 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    return toupper(word[0]) - 'A';
+    unsigned int number = 0;
+
+    if (word[0] == 44)
+    {
+        number = 0;
+    }
 }
 
 // Loads dictionary into memory, returning true if successful, else false
@@ -59,16 +64,23 @@ bool load(const char *dictionary)
 {
 
     // TODO
-    FILE *dict_pointer = fopen(dictionary, "r");
-    if (dictionary == NULL)
+    FILE *F = fopen(dictionary, "r");
+    if (F == NULL)
     {
         printf("Unable to open %s\n, dictionary");
         return false;
     }
-    char word [LENGTH+1];
-    while (fscanf(file, "%s\n", word) != EOF)
+    char temp [LENGTH + 1];
 
-    node *n = malloc(sizeof(node));
+    unsigned int number;
+
+    node *p = malloc(sizeof(node));
+    for (int i = 0; i < N; i++)
+    {
+        p->next = NULL;
+        table[i] = p;
+    }
+    
 
     if(n == NULL)
     {
