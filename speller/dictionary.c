@@ -55,6 +55,7 @@ unsigned int hash(const char *word)
     // TODO: Improve this hash function
     unsigned int number = 0;
 
+
     if (word[0] == 44)
     {
         number = 0;
