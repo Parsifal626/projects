@@ -118,11 +118,18 @@ unsigned int size(void)
 bool unload(void)
 {
     for (int i = 0; i < N; i++)
-    {
-        node *temp = NULL;
-        node *dlt = NULL;
-        free(dlt);
+   {
+            node *temp = NULL;
+            node *dlt = NULL;
+
+            temp = table[i];
+
+            while (temp->next != NULL)
+            {
+                dlt = temp;
+                temp = temp->next;
+                free(dlt);
+            }
+        }
+        return true;
     }
-    // TODO
-    return true;
-}
