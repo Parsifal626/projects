@@ -30,6 +30,7 @@ bool check(const char *word)
 {
     int n = strlen(word);
     char copy[n + 1];
+    copy[n] = '\0'
     // TODO
     for(int i = 0; i < n; i++)
     {
