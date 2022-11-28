@@ -71,7 +71,7 @@ bool load(const char *dictionary)
 
     // TODO
     FILE *F = fopen(dictionary, "r");
-    if (dictionary == NULL)
+    if (F == NULL)
     {
         return false;
     }
