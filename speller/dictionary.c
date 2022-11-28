@@ -29,7 +29,7 @@ int n_size = 0;
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    number = hash(word);
+    int number = hash(word);
 
     node *n = table[number];
 
