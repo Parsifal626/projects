@@ -86,7 +86,7 @@ bool load(const char *dictionary)
     for (int i = 0; i < N; i++)
     {
         p->next = NULL;
-        table[i] = NULL;
+        table[i] = p;
     }
 
     while(fscanf(F, "%s", temp) != EOF)
