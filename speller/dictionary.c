@@ -60,6 +60,12 @@ unsigned int hash(const char *word)
     {
         number = 0;
     }
+        else if (toupper(word[0]) >=65 && toupper(word[0])<=90)
+        {
+            number = (toupper(word[0]) - 64);
+        }
+
+        return number;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
