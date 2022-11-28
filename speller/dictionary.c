@@ -4,6 +4,8 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdbool.h>
+#include <string.h>
+#include <strings.h>
 
 #include "dictionary.h"
 
@@ -67,7 +69,6 @@ bool load(const char *dictionary)
     FILE *F = fopen(dictionary, "r");
     if (F == NULL)
     {
-        printf("Unable to open %s\n, dictionary");
         return false;
     }
     char temp [LENGTH + 1];
@@ -93,27 +94,27 @@ bool load(const char *dictionary)
     {
         return false;
     }
-    strcpy(n->word, load);
-    n->next = table(number);
-    table(number) = n;
-    word_count++;
+    strcpy(n->word, temp);
+    n->next = table[number];
+    table[number] = n;
+    n_size++;
 }
     free(p);
     fclose(F);
-    return true
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
     // TODO
-    return size_n;
+    return n_size;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    for (int i = 0; I < N; i++)
+    for (int i = 0; i < N; i++)
     {
         node *temp = NULL;
         node *dlt = NULL;
