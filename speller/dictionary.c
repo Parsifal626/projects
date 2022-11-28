@@ -32,8 +32,8 @@ bool check(const char *word)
     int number = hash(word);
 
     node *n = table[number];
-    for (node *n = table[hash(word)]; n != NULL; n = n->next)
-    
+    for (node *word = table[hash(word)]; n != NULL; n = n->next)
+
 {
             if (strcasecmp(word, n->word) == 0)
             {
