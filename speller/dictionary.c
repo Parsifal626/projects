@@ -29,11 +29,12 @@ int n_size = 0;
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    int number = hash(word);
+    unsigned int number;
+    number = hash(word);
 
-    node *n = table[number];
-    for (node *word = table[hash(word)]; n != NULL; n = n->next)
-
+    node *n;
+    n = table[number];
+    while (n->next != NULL)
 {
             if (strcasecmp(word, n->word) == 0)
             {
