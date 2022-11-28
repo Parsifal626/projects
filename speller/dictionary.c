@@ -93,7 +93,7 @@ bool load(const char *dictionary)
     {
         return false;
     }
-    strcpy(n->word, word);
+    strcpy(n->word, load);
     n->next = table(hash_value);
     table(hash_value) = n;
     word_count++;
