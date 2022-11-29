@@ -74,7 +74,7 @@ bool load(const char *dictionary)
     {
         return false;
     }
-    char word [LENGTH + 1];
+    char temp [LENGTH + 1];
 
     unsigned int number;
 
