@@ -30,20 +30,20 @@ int n_size = 0;
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    unsigned int number;
-    number = hash(word);
+    int key = hash(word);
+    node* F = table[key];
 
-    node *n;
-    n = table[number];
-    while (n->next != NULL)
-{
-            if (strcasecmp(word, n->word) == 0)
-            {
-                return true;
-            }
-            n = n->next;
-}
+    while(F != NULL)
+    {
+        if(strcasecmp(F->word, word) == 0)
+        {
+            return true;
+        }
+        F = F->next;
+    }
+
     return false;
+
 }
 
 // Hashes word to a number
@@ -57,7 +57,7 @@ unsigned int hash(const char *word)
         value += tolower(word[i]);
     }
     return value % N;
-    
+
 }
 
 // Loads dictionary into memory, returning true if successful, else false
