@@ -83,9 +83,10 @@ bool load(const char *dictionary)
 
     while(fscan(F, "%s\n", F) != EOF)
     {
-        
+        node* tempRude = malloc(sizeof(node));
     }
     return true;
+
 
     char temp [LENGTH + 1];
 
