@@ -50,19 +50,14 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    unsigned int number = 0;
+    int value = 0;
 
-
-    if (word[0] == 44)
+    for(int i = 0; word[i] !='\0'; i++)
     {
-        number = 0;
+        value += tolower(word[i]);
     }
-        else if (toupper(word[0]) >=65 && toupper(word[0])<=90)
-        {
-            number = (toupper(word[0]) - 64);
-        }
-
-        return number;
+    return value % N;
+    
 }
 
 // Loads dictionary into memory, returning true if successful, else false
