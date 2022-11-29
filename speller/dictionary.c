@@ -84,6 +84,15 @@ bool load(const char *dictionary)
     while(fscan(F, "%s\n", F) != EOF)
     {
         node* tempRude = malloc(sizeof(node));
+
+        strcmp(tempNode->word, tempWord);
+        int key = hash(tempWord);
+
+        if (table[key] == NULL)
+        {
+            tempNode->next = NULL;
+            table[key] =
+        }
     }
     return true;
 
