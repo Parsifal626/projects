@@ -102,38 +102,6 @@ bool load(const char *dictionary)
     fclose(F);
     return true;
 
-
-    char temp [LENGTH + 1];
-
-    unsigned int number;
-
-    node *p = malloc(sizeof(node));
-    for (int i = 0; i < N; i++)
-    {
-        p->next = NULL;
-        table[i] = p;
-    }
-
-    while(fscanf(F, "%s", temp) != EOF)
-    {
-        printf("%s", temp);
-        number = hash(temp);
-
-        node *n = malloc(sizeof(node));
-
-
-    if(n == NULL)
-    {
-        return false;
-    }
-    strcpy(n->word, temp);
-    n->next = table[number];
-    table[number] = n;
-    n_size++;
-}
-    free(p);
-    fclose(F);
-    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
