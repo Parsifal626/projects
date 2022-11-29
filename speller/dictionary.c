@@ -79,11 +79,11 @@ bool load(const char *dictionary)
         table[i] = NULL;
     }
 
-    node* temp[LENGTH + 1];
+    char tempNode[LENGTH + 1];
 
-    while(fscan(F, "%s\n", F) != EOF)
+    while(fscanf(F, "%s\n", tempWord) != EOF)
     {
-        node* tempRude = malloc(sizeof(node));
+        node* tempNode = malloc(sizeof(node));
 
         strcmp(tempNode->word, tempWord);
         int key = hash(tempWord);
