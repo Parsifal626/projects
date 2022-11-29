@@ -74,6 +74,13 @@ bool load(const char *dictionary)
     {
         return false;
     }
+    for (int i = 0; i < N; i++)
+    {
+        table[i] = NULL;
+    }
+
+    node 
+
     char temp [LENGTH + 1];
 
     unsigned int number;
