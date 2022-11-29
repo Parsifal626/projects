@@ -114,7 +114,10 @@ bool unload(void)
     for (int i = 0; i < N; i++)
    {
             node *F = table[i];
-            while (temp->next != NULL)
+            while (F != NULL)
+            {
+                
+            }
 
             node *dlt = NULL;
 
