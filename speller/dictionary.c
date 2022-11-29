@@ -85,7 +85,7 @@ bool load(const char *dictionary)
     {
         node* tempNode = malloc(sizeof(node));
 
-        strcmp(tempNode->word, tempWord);
+        strcpy(tempNode->word, tempWord);
         int key = hash(tempWord);
 
         if (table[key] == NULL)
@@ -96,7 +96,7 @@ bool load(const char *dictionary)
         else
         {
             tempNode->next = table[key];
-            table[key] = tempNode
+            table[key] = tempNode;
         }
     }
     fclose(F);
