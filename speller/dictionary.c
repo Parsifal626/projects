@@ -93,7 +93,13 @@ bool load(const char *dictionary)
             tempNode->next = NULL;
             table[key] = tempNode;
         }
+        else
+        {
+            tempNode->next = table[key];
+            table[key] = tempNode
+        }
     }
+    fclose(F);
     return true;
 
 
