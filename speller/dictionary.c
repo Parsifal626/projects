@@ -79,7 +79,13 @@ bool load(const char *dictionary)
         table[i] = NULL;
     }
 
-    node 
+    node* temp[LENGTH + 1];
+
+    while(fscan(F, "%s\n", F) != EOF)
+    {
+        
+    }
+    return true;
 
     char temp [LENGTH + 1];
 
