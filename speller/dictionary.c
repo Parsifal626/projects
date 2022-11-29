@@ -116,19 +116,11 @@ bool unload(void)
             node *F = table[i];
             while (F != NULL)
             {
-                
-            }
-
-            node *dlt = NULL;
-
-            temp = table[i];
-
-
-            {
-                dlt = temp;
-                temp = temp->next;
+                node* dlt = F;
+                F = F->next;
                 free(dlt);
             }
+            table[i] = NULL;
         }
         return true;
     }
