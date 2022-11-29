@@ -91,7 +91,7 @@ bool load(const char *dictionary)
         if (table[key] == NULL)
         {
             tempNode->next = NULL;
-            table[key] =
+            table[key] = tempNode;
         }
     }
     return true;
