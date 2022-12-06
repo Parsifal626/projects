@@ -7,8 +7,11 @@ while True:
         break
 
 for i in range(height):
-    print(" " * (height - 1 - i), end='')
-    print("#" * (i + 1), end='')
-    print(" " * 2, end='')
-    print("#" * (i + 1))
+    for j in range(height):
+        if i + j >= height - 1:
+            print("#", end "")
+        else:
+            print(" ", end"")
+    print()
+
 
