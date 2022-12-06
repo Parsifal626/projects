@@ -7,6 +7,8 @@ while True:
         break
 cents = round(change * 100)
 
+count = 0
+
 coins = cents // 25
 cents = cents % 25
 coins += cents //10
