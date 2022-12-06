@@ -21,4 +21,5 @@ while cents >= 5:
 while cents >=1:
     cents = cents - 1
     count += 1
+    
     print("Total: ", count)
