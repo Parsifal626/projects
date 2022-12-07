@@ -1,26 +1,50 @@
 import csv
-import sys
-
+from sys import argv
 
 def main():
 
     # TODO: Check for command-line usage
-    if len(sys.argv) != 3:
-        sys.exit("python dna.py data csv sequence.txt")
+    if len(argv) != 3:
+        print("Incorrect # of inputs")
+        exit()
 
     # TODO: Read database file into a variable
-    database = []
-    with open(sys.argv[1], 'r') as file;
-    reader = csv.DictReader(file)
-    for row in reader:
-        database
+    with open(argv[1]) as e:
+        reader = csv.DictReader(e)
+        database = list(reader)
+
     # TODO: Read DNA sequence file into a variable
+    with open(argv[2]) as f:
+        sequence = f.read()
 
     # TODO: Find longest match of each STR in DNA sequence
+    matches = {}
+
+    #This results in "name" : 0
+    for i in database[0]:
+        matches[i] = (longest_match(sequence, i))
 
     # TODO: Check database for matching profiles
 
+    suspect = 'No Match'
+    suspect_counter = 1
+
+    for i in range(len(database)):
+        for j in matches:
+
+            if str(matches[j]) == database[i][j]:
+                suspect_counter += 1
+        if suspect_counter == len(matches):
+
+            suspect = database[i]['name']
+            break
+        else:
+            suspect_counter = 1
+
+    print(suspect)
+
     return
+
 
 
 def longest_match(sequence, subsequence):
