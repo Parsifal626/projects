@@ -1,0 +1,23 @@
+
+#name {
+    font-family: monspace;
+    font-size: 50px;
+    text-emphasis: underline;
+    color: green;
+}
+
+
+.about {
+    font-family: Helvetica, san-serif;
+}
+
+h1{
+    color: red;
+}
+
+li:hover{
+    color: blue;
+}
+h3.about{
+    color: olive;
+}
