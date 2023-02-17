@@ -1,5 +1,5 @@
 s = input(str('Type something.  '))
-g = str(':)')
+g = str('')
 b = str(":(")
 
         if g() or b() in s:
