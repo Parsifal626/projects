@@ -1,2 +1,2 @@
 s = input(str('Type something. '))
-print(s.split(...))
+print(s.replace( , ...))
