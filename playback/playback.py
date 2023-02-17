@@ -1,2 +1,2 @@
 s = input(str('Type something. '))
-print(s.replace( , ...))
+print(s.replace(' ', '...'))
