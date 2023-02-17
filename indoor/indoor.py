@@ -1,3 +1,2 @@
-s ='Hello, world'
-s = s.lower(s)
-print = s
+s = ('Hello, world')
+print(s.lower())
