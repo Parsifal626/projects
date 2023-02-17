@@ -1,2 +1,2 @@
-s = ('Hello, world')
+s = input(str('Ss'))
 print(s.lower())
