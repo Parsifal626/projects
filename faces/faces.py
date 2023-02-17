@@ -1,10 +1,10 @@
 s = input(str('Type something.  '))
 
-
+g = 
 
 def replace(old, new):
     for i in s:
-        if i == (':)') and 
+        if i == (':)') and
 
 
 
