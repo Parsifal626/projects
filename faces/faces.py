@@ -5,7 +5,7 @@ s = input(str('Type something.  '))
 elif s(':(') in s:
     print(s.replace(':(', '🙁'))
 else:
-    prin
+    print(s)
 
 
 
