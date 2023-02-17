@@ -1,2 +1,3 @@
-s = input(int())
-print(s * 90000000000000000)
+s = input(str('Type something.  '))
+i = int(s)
+print(i * 90000000000000000)
