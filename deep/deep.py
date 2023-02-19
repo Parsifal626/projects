@@ -1,10 +1,10 @@
 def main():
     s = input('What is the Answer to the Great Question of Life, the Universe, and Everything? ')
-    if s == '42':
+    if s.strip() == '42':
         print("Yes")
-    elif s.lower() == 'forty two':
+    elif s.lower().strip() == 'forty two':
         print("Yes")
-    elif s.lower() == 'forty-two':
+    elif s.lower().strip() == 'forty-two':
         print("Yes")
     else:
         print('No')
