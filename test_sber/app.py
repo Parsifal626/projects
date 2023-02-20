@@ -78,3 +78,15 @@ def delete_song(id):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+    def get_all_songs(self) -> List[Song]:
+    """Возвращает все песни в плейлисте"""
+    return self._playlist.get_all_songs()
+
+def add_song(self, song_data: dict) -> Song:
+    """Добавляет новую песню в плейлист"""
+    song = Song(**song_data)
+    self._playlist.add_song(song)
+    return song
+
