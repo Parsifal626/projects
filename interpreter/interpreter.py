@@ -1,5 +1,5 @@
-expression = input("Type xyz ")
-x,y,z = expression.split(' ')
+expression = input("Type xyz: ")
+x, y, z = expression.split(' ')
 x = float(x)
 z = float(z)
 
