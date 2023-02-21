@@ -29,7 +29,9 @@ class Playlist:
     def next_song(self):
         if self.__play_thread is not None:
             self.__play_thread_lock.acquire()
-            self.__
+            self.__is_playing = False
+            self.__play_thread.join()
+            self.__play_thread_lock.release()
 
 
 
