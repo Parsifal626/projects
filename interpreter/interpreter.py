@@ -1,5 +1,5 @@
-expression = (input( 'Type xyz '))
-expression = float(expression.split(' '))
+expression = float(input( 'Type xyz '))
+expression = (expression.split(' '))
 
 
 print (f'{x:.2f}')
