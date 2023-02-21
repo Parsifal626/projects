@@ -47,14 +47,6 @@ class Playlist:
             self.__play_thread_lock.release()
 
 
-
-    def prev_song(self):
-        if self.__play_thread is not None:
-            self.__play_thread_lock.acquire()
-            self.__is_playing = False
-            self.__play_thread.join()
-            self.__play_thread_lock.release()
-
         self.__current_song_index -= 1
         if self.__current_song_index < 0:
             self.__current_song_index = len(self.__songs) - 1
