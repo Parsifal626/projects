@@ -1,8 +1,10 @@
-import threading
+import threading from Thread
 import time
 
 class Playlist:
     def __init__(self):
+        self.__songs = []
+        self.__current_song_
         self.playlist = DoublyLinkedList()
         self.current_node = None
         self.playing = False
