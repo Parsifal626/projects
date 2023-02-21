@@ -1,7 +1,8 @@
 from threading import Thread, Lock
 import time
 
-#Class "Playlist"
+#The Playlist class implements all the functionality for managing a playlist,
+# using a doubly linked list to store a list of songs.
 class Playlist:
     def __init__(self):
         self.__songs = []
@@ -10,6 +11,8 @@ class Playlist:
         self.__play_thread_lock = Lock()
         self.__is_playing = False
 
+#The play method starts playing the current song.
+#If the song is already playing, nothing happens.
     def play(self):
         if self.__play_thread is None or not self.__play_thread.is_alive():
             self.__play_thread_lock.acquire()
@@ -18,6 +21,8 @@ class Playlist:
             self.__play_thread.start()
             self.__play_thread_lock.release()
 
+#
+#
     def pause(self):
         if self.__play_thread is not None and self.__is_playing:
             self.__play_thread_lock.acquire()
