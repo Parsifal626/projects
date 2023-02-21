@@ -4,17 +4,18 @@ def main():
     hours = float(hours)
     minutes = float(minutes)
 
-
-
-
+    if 7<=hours<=8:
+        print('Breakfast time')
+    if 7<=hours<=8:
+        print('Breakfast time')
 
 def convert(time):
     time = [hours, minutes]
     minutes = minutes / 60
     if hours > 12:
-        hours = return(hours - 12)
+        hours = [hours - 12]
     else:
-        hours = return(hours)
+        hours = [hours]
 
 
 
