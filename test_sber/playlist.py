@@ -12,7 +12,9 @@ class Playlist:
     def play(self):
         if self.__play_thread is None or not self.__play_thread.is_alive():
             self.__play_thread_lock.acquire()
-            
+            self.__is_playing = True
+            self.__play_thread = Thread(target=self.__play_current_song)
+            self.__
 
 
 
