@@ -8,7 +8,7 @@ def main():
     elif 12<=check<=13:
         print('lunch time')
     elif 18<=check<=19:
-        print('lunch time')
+        print('dinner time')
 
 def convert(time):
     hours, minutes = time.split(':')
