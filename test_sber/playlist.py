@@ -57,11 +57,12 @@ class Playlist:
         duration = song.duration
         start_time = time.time()
 
-        while self.__is_
-
-
         while self.__is_playing and time.time() - start_time < duration:
             time.sleep(0.1)
+
+        self.__is_play
+
+
 
         self.__is_playing = False
         self.next_song()
