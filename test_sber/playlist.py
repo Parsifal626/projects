@@ -1,7 +1,7 @@
 from threading import Thread, Lock
 import time
 
-#
+#Class "Playlist"
 class Playlist:
     def __init__(self):
         self.__songs = []
