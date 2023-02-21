@@ -10,22 +10,12 @@ class Playlist:
         self.__is_playing = False
 
     def play(self):
-        if self.__play_thread is None or not self.__play_thread.is
+        if self.__play_thread is None or not self.__play_thread.is_alive():
+            self.__play_thread_lock.acquire()
+            
 
 
 
-
-from threading import Thread, Lock
-import time
-
-
-class Playlist:
-    def __init__(self):
-        self.__songs = []
-        self.__current_song_index = 0
-        self.__play_thread = None
-        self.__play_thread_lock = Lock()
-        self.__is_playing = False
 
     def play(self):
         if self.__play_thread is None or not self.__play_thread.is_alive():
