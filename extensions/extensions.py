@@ -3,7 +3,9 @@
 
 s = input("Type your file " ).lower()
 
-if (".jpg" or ".jpeg") in s:
+if (".jpg") in s:
+    print('image/jpeg')
+elif ('.jpeg') in s:
     print('image/jpeg')
 elif (".png") in s:
     print('image/png')
@@ -14,7 +16,7 @@ elif ".pdf" in s:
 elif ".zip" in s:
     print('application/zip')
 elif ".txt" in s:
-    print('plain/text')
+    print('text/plain')
 else:
     print('application/octet-stream')
 
