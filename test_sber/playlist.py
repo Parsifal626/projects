@@ -6,7 +6,8 @@ class Playlist:
         self.__songs = []
         self.__current_song_index = 0
         self.__play_thread = None
-self
+        self.__play_thread_lock = Lock()
+        self.__is_playing = False
 
 
 
