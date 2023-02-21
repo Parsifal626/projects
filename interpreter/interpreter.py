@@ -1,3 +1,5 @@
-x, y,z = float((input( 'Type x y z ')).split(" "))
+expression = (input( 'Type xyz '))
+expression = int(expression.split(' '))
 
-print ((x,y,z))
+
+print (f'{x:.2f}')
