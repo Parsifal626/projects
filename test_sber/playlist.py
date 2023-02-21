@@ -41,8 +41,9 @@ class Playlist:
             self.__play_thread.join()
             self.__play_thread_lock.release()
 
-#if we reach the limit of songs we start from scratch
+
         self.__current_song_index +=1
+#if we reach the limit of songs we start from scratch
         if self.__current_song_index >= len(self.__songs):
             self.__current_song_index = 0
 
@@ -56,8 +57,8 @@ class Playlist:
             self.__play_thread.join()
             self.__play_thread_lock.release()
 
-# if 
         self.__current_song_index -= 1
+# if we reach the first song we skip on the last song
         if self.__current_song_index < 0:
             self.__current_song_index = len(self.__songs) - 1
 
