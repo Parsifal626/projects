@@ -29,7 +29,7 @@ class Playlist:
             self.__play_thread_lock.release()
 
 
-# add song
+# add song in the end
     def add_song(self, song):
         self.__songs.append(song)
 
