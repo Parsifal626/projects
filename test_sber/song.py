@@ -1,5 +1,9 @@
 class Song:
-    deff __init__(self, title, duration):
+    def __init__(self, title, duration):
+        #Title of a song
+        self.title = title
+        #
+        self.duration = duration
 
 
 
