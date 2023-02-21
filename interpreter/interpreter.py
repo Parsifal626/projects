@@ -13,4 +13,4 @@ if y == "*":
 if y == '/':
     result = x / z
 
-print (f'{result.f}')
+print (result)
