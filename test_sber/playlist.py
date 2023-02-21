@@ -17,16 +17,15 @@ class Playlist:
             self.__play_thread.start()
             self.__play_thread_lock.release()
 
+    def pause(self):
+        if self.__play_thread is not None and self.__is_
 
 
 
-    def play(self):
-        if self.__play_thread is None or not self.__play_thread.is_alive():
-            self.__play_thread_lock.acquire()
-            self.__is_playing = True
-            self.__play_thread = Thread(target=self.__play_current_song)
-            self.__play_thread.start()
-            self.__play_thread_lock.release()
+
+
+
+
 
     def pause(self):
         if self.__play_thread is not None and self.__is_playing:
