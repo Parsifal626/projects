@@ -37,11 +37,6 @@ class Playlist:
         if self.__current_song_index >= len(self.__songs):
             self.__current_song_index = 0
 
-
-        self.__current_song_index += 1
-        if self.__current_song_index >= len(self.__songs):
-            self.__current_song_index = 0
-
         self.play()
 
     def prev_song(self):
