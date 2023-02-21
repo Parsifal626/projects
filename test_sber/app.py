@@ -1,7 +1,3 @@
-pip install flask
-pip install sqlite3
-
-
 from flask import Flask, jsonify, request
 import sqlite3
 
