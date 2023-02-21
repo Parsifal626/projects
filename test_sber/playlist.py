@@ -23,15 +23,10 @@ class Playlist:
             self.__is_playing = False
             self.__play_thread_lock.release()
 
+    def add_song(self, song):
+        self.__songs.append(song)
 
 
-
-
-    def pause(self):
-        if self.__play_thread is not None and self.__is_playing:
-            self.__play_thread_lock.acquire()
-            self.__is_playing = False
-            self.__play_thread_lock.release()
 
     def add_song(self, song):
         self.__songs.append(song)
