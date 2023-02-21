@@ -4,11 +4,11 @@ def main():
     hours = float(hours)
     minutes = float(minutes)
 
-    if 7<=hours<=8:
+    if 7<=hours<=8 and 00<=minutes<=60:
         print('Breakfast time')
-    elif 12<=hours<=13:
+    elif 12<=hours<=13 and 00<=minutes<=60:
         print('lunch time')
-    elif 18<=hours<=19:
+    elif 18<=hours<=19 and 00<=minutes<=60:
         print('lunch time')
 
 def convert(time):
