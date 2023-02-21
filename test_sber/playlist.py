@@ -46,7 +46,6 @@ class Playlist:
             self.__play_thread.join()
             self.__play_thread_lock.release()
 
-
         self.__current_song_index -= 1
         if self.__current_song_index < 0:
             self.__current_song_index = len(self.__songs) - 1
