@@ -1,27 +1,21 @@
 def main():
     time = input("What time is it? ")
-    hours, minutes = time.split(':')
-    hours = float(hours)
-    minutes = float(minutes)
+    check = convert(time)
 
-    if 7<=hours<=8 and 00<=minutes<=60:
+
+    if 7<=check<=8:
         print('Breakfast time')
-    elif 12<=hours<=13 and 00<=minutes<=60:
+    elif 12<=check<=13:
         print('lunch time')
-    elif 18<=hours<=19 and 00<=minutes<=60:
+    elif 18<=check<=19:
         print('lunch time')
 
 def convert(time):
-    time = [hours, minutes]
-    minutes = minutes / 60
-    if hours > 12:
-        hours = [hours - 12]
-    else:
-        hours = [hours]
-
-
-
-
+    hours, minutes = time.split(':')
+    hours = int(hours)
+    minutes = int(minutes) / 60
+    convert = hours + minutes
+    return convert
 
 
 if __name__ == "__main__":
