@@ -1,7 +1,16 @@
-x = int(input( 'Type x '))
-y = int(input( 'Type y '))
-z = (+) or (-) or (*) or (/)
+expression = input("Type xyz ")
+x,y,z = expression.split(' ')
+x = float(x)
+z = float(z)
 
+if y == "+":
+    result = z + x
 
+if y == "-":
+    result = x - z
+if y == "*":
+    result = x*z
+if y == '/':
+    result = x / z
 
-print (f'{x z y.2f}')
+print (f'{result.f}')
