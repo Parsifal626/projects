@@ -26,10 +26,12 @@ class Playlist:
     def add_song(self, song):
         self.__songs.append(song)
 
+    def next_song(self):
+        if self.__play_thread is not None:
+            self.__play_thread_lock.acquire()
+            self.__
 
 
-    def add_song(self, song):
-        self.__songs.append(song)
 
     def next_song(self):
         if self.__play_thread is not None:
