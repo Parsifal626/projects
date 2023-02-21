@@ -1,4 +1,3 @@
-x = float(input( 'x =? '))
-y = float(input( 'y =? '))
+x, y,z = float((input( 'Type x y z ')).split(" "))
 
-print ((x+y))
+print ((x,y,z))
