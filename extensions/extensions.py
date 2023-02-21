@@ -1,9 +1,9 @@
 
 
 
-s = input("Type your file " )
-s = s.lower()
-if "jpg" or "jpeg" in s:
+s = input("Type your file " ).lower()
+
+if ("jpg" or "jpeg") in s:
     print('image/jpeg')
 elif 'png' in s:
     print('image/png')
