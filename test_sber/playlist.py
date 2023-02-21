@@ -9,6 +9,9 @@ class Playlist:
         self.__play_thread_lock = Lock()
         self.__is_playing = False
 
+    def play(self):
+        if self.__play_thread is None or not self.__play_thread.is
+
 
 
 
