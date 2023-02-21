@@ -21,8 +21,7 @@ class Playlist:
             self.__play_thread.start()
             self.__play_thread_lock.release()
 
-#
-#
+# do nothing if there is no current song
     def pause(self):
         if self.__play_thread is not None and self.__is_playing:
             self.__play_thread_lock.acquire()
@@ -68,3 +67,61 @@ class Playlist:
 
         self.__is_playing = False
         self.next_song()
+
+
+import threading
+import time
+
+class Song:
+    def __init__(self, name, duration):
+        self.name = name
+        self.duration = duration
+
+class Playlist:
+    def __init__(self):
+        self.current_song = None
+        self.head = None
+        self.tail = None
+        self.lock = threading.Lock()
+
+    def add_song(self, song):
+        with self.lock:
+            new_song = Song(song.name, song.duration)
+            if self.tail is None:
+                self.head = new_song
+                self.tail = new_song
+            else:
+                new_song.prev = self.tail
+                self.tail.next = new_song
+                self.tail = new_song
+
+    def play(self):
+        if self.current_song is None:
+            self.current_song = self.head
+        while self.current_song is not None:
+            print("Playing song:", self.current_song.name)
+            duration = self.current_song.duration
+            time.sleep(duration)
+            self.current_song = self.current_song.next
+
+    def pause(self):
+
+        if self.current_song is None:
+            return
+        print("Pausing song:", self.current_song.name)
+        self.current_song = self.current_song
+        # TODO: implement resume functionality
+
+    def next_song(self):
+        # do nothing if there is no current song
+        if self.current_song is None:
+            return
+        print("Stopping song:", self.current_song.name)
+        self.current_song = self.current_song.next
+
+    def prev_song(self):
+        # do nothing if there is no current song
+        if self.current_song is None:
+            return
+        print("Stopping song:", self.current_song.name)
+        self.current_song = self.current_song.prev
