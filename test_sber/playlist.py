@@ -18,10 +18,10 @@ class Playlist:
             self.__play_thread_lock.release()
 
     def pause(self):
-        if self.__play_thread is not None and self.__is_
-
-
-
+        if self.__play_thread is not None and self.__is_playing:
+            self.__play_thread_lock.acquire()
+            self.__is_playing = False
+            self.__play_thread_lock.release()
 
 
 
