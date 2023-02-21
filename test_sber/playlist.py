@@ -54,6 +54,9 @@ class Playlist:
 
     def __play_current_song(self):
         song = self.__songs[self.__current_song_index]
+
+    def __play_current_song(self):
+        song = self.__songs[self.__current_song_index]
         duration = song.duration
         start_time = time.time()
 
