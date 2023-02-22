@@ -12,7 +12,8 @@ def is_valid(s):
     if 6<len(s)<2:
         return False
     # minimum 2 letters
-    s[0:7] = (A-Z)
+    if s[0:7]= (A-Z):
+    count +=1
 
     # mid = Letters
 
