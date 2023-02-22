@@ -7,9 +7,16 @@ def main():
 
 
 def is_valid(s):
-    if i > 6:
-        break
-    
+    # min 2 and max 6 characters
+    s = input("Type your vanity places: ")
+    # minimum 2 letters
+    # mid = Letters
+    # the first characters not 0
+    # No periods, spaces, or punctuation marks are allowed
+
+
+        pass
+
     ...
 
 
