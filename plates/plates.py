@@ -21,16 +21,12 @@ def is_valid(s):
             if s[i] == '0':
                 return False
             else:
-
-    (len(s[0])+ len(s))
-
-
-    # mid = Letters
-
-    # the first characters not 0
-    s[0] != str(0)
+                break
+        i +=1
 
     # No periods, spaces, or punctuation marks are allowed
+
+    
 
 
         pass
