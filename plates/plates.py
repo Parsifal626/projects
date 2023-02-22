@@ -14,8 +14,8 @@ def is_valid(s):
     # mid = Letters
 
     # the first characters not 0
-    s[0] != 0
-    
+    s[0] != str(0)
+
     # No periods, spaces, or punctuation marks are allowed
 
 
