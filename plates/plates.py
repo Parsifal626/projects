@@ -26,15 +26,10 @@ def is_valid(s):
 
     # No periods, spaces, or punctuation marks are allowed
     for c in s:
-        if c !=
+        if c in ['.',' ', '!', '?']:
+            return False
 
-
-
-
-
-        pass
-
-    ...
+    return True
 
 
 main()
