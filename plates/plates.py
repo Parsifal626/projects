@@ -7,6 +7,8 @@ def main():
 
 
 def is_valid(s):
+    if i > 6:
+        break
     
     ...
 
