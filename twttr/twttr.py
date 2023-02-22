@@ -1,5 +1,6 @@
 s = (input("Type Something: "))
-s= s.replace(("a", "e", "i", "o", "u"), "")
-print (s)
+for i in s:
+    if i == ("a", "e", "i", "o", "u"):
+        print(s.replace(i, ""))
 
 
