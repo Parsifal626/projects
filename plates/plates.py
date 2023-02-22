@@ -25,8 +25,11 @@ def is_valid(s):
         i +=1
 
     # No periods, spaces, or punctuation marks are allowed
+    for c in s:
+        if c !=
 
-    
+
+
 
 
         pass
