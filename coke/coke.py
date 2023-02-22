@@ -1,3 +1,17 @@
+def main():
+    print(f'Amount due: 50')
+    insert= int(input("Insert coin: "))
+    amount_due = 50
+    while insert !=[5,10,25]:
+       print(f'Amount due: 50')
+       insert= int(input("Insert coin: "))
+    print(f')
+
+
+
+
+
+
 def coincal(insert,amount_due):
     insert= int(input("Insert coin: "))
     while amount_due > insert:
