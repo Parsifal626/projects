@@ -1,4 +1,4 @@
-s = (input("Type Something: ")).replace("A, E, I, O, U)", "")
+s = (input("Type Something: ")).replace("a, e, i, o, u)", "")
 print (s)
 
 
