@@ -1,4 +1,6 @@
-s  = int(input("Insert Coin: "))
+s = int(input("Type Something: "))
+for i in s:
+   
 
 
 
