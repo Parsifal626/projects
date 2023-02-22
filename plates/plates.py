@@ -15,6 +15,8 @@ def is_valid(s):
     if s[0].isalpha() == False or s[1].isalpha() == False:
         return False
 
+    (len(s[0])+ len(s))
+
 
     # mid = Letters
 
