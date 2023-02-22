@@ -9,6 +9,8 @@ def main():
 def is_valid(s):
     # min 2 and max 6 characters
     s = input("Type your vanity place. (min 2 and max 6): ")
+    if 6<len(s)<2:
+        return False
     # minimum 2 letters
     s[0:7] = (A-Z)
 
