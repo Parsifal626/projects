@@ -8,7 +8,7 @@ def main():
 
 def is_valid(s):
     # min 2 and max 6 characters
-    if 6<len(s)<2:
+    if len(s)<2 or len(s)>6:
         return False
     # minimum 2 letters
     if s[0].isalpha() == False or s[1].isalpha() == False:
