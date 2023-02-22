@@ -1,5 +1,5 @@
 def coincal(insert,amount_due):
-    amount_due =50
+    insert= int(input("Insert coin: "))
     while amount_due > insert:
        amount_due = amount_due - insert
        insert= int(input("Insert coin: "))
@@ -10,4 +10,4 @@ def coincal(insert,amount_due):
     if insert > amount_due:
         print(f'Change owed: {insert - amount_due}')
 
-main()
+coincal(insert, 50)
