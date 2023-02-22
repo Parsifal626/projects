@@ -54,5 +54,6 @@ def delete_track(track_id):
         db.session.commit()
         return jsonify({'message': 'Track deleted successfully'}), 200
     else:
-        return jsonify({'message': 'Track not found'}), 404 if name == 'main':
-app.run(debug=True)
+        return jsonify({'message': 'Track not found'}), 404
+if name == 'main':
+    app.run(debug=True)
