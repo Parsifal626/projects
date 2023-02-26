@@ -1,4 +1,4 @@
-fruit = input('Item: ')
+fruit = input('Item: ').lower()
 
 
 fruits = {
