@@ -6,5 +6,7 @@ fruits = {
     "avocado":'50',
     "banana": '110',
     "sweet cherries": '100'}
-print (f'Calories: ', fruit.values())
+
+if fruit in fruits:
+    print (f'Calories: ', fruit())
 
