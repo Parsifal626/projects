@@ -1,9 +1,9 @@
-def main():
-
-
 
 s = input('Type fruit ').lower
-while s in fruits
+while True:
+    s in fruits[]
+    break
+
 
 
 fruits = [
