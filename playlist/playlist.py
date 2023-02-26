@@ -10,7 +10,7 @@ class Playlist:
         self.__play_thread = None
         self.__play_thread_lock = Lock()
         self.__is_playing = False
-        
+
 
 #The play method starts playing the current song.
 #If the song is already playing, nothing happens.
