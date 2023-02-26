@@ -1,77 +1,80 @@
-from threading import Thread, Lock
+import threading
 import time
 
-#The Playlist class implements all the functionality for managing a playlist,
-# using a doubly linked list to store a list of songs.
+class Song:
+    def __init__(self, title, duration):
+        self.title = title
+        self.duration = duration
+
 class Playlist:
     def __init__(self):
-        self.__songs = []
-        self.__current_song_index = 0
-        self.__play_thread = None
-        self.__play_thread_lock = Lock()
-        self.__is_playing = False
+        self.head = None
+        self.tail = None
+        self.current_node = None
+        self.playing = False
+        self.pause = False
+        self.lock = threading.Lock()
 
+    def add_song(self, title, duration):
+        song = Song(title, duration)
+        node = PlaylistNode(song)
 
-#The play method starts playing the current song.
-#If the song is already playing, nothing happens.
+        with self.lock:
+            if self.head is None:
+                self.head = node
+                self.tail = node
+            else:
+                self.tail.next_node = node
+                node.prev_node = self.tail
+                self.tail = node
+
     def play(self):
-        if self.__play_thread is None or not self.__play_thread.is_alive():
-            self.__play_thread_lock.acquire()
-            self.__is_playing = True
-            self.__play_thread = Thread(target=self.__play_current_song)
-            self.__play_thread.start()
-            self.__play_thread_lock.release()
+        with self.lock:
+            if not self.playing and not self.pause:
+                self.playing = True
+                self.current_node = self.head
+                self._play_song(self.current_node.song)
 
-# do nothing if there is no current song
     def pause(self):
-        if self.__play_thread is not None and self.__is_playing:
-            self.__play_thread_lock.acquire()
-            self.__is_playing = False
-            self.__play_thread_lock.release()
+        with self.lock:
+            if self.playing and not self.pause:
+                self.pause = True
 
+    def resume(self):
+        with self.lock:
+            if self.playing and self.pause:
+                self.pause = False
+                self._play_song(self.current_node.song)
 
-# add song in the end
-    def add_song(self, song):
-        self.__songs.append(song)
+    def next(self):
+        with self.lock:
+            if self.current_node.next_node is not None:
+                self._stop_song()
+                self.current_node = self.current_node.next_node
+                self._play_song(self.current_node.song)
 
-# play next song
-    def next_song(self):
-        if self.__play_thread is not None:
-            self.__play_thread_lock.acquire()
-            self.__is_playing = False
-            self.__play_thread.join()
-            self.__play_thread_lock.release()
+    def prev(self):
+        with self.lock:
+            if self.current_node.prev_node is not None:
+                self._stop_song()
+                self.current_node = self.current_node.prev_node
+                self._play_song(self.current_node.song)
 
+    def _play_song(self, song):
+        t = threading.Thread(target=self._play, args=(song,))
+        t.start()
 
-        self.__current_song_index +=1
-#if we reach the limit of songs we start from scratch
-        if self.__current_song_index >= len(self.__songs):
-            self.__current_song_index = 0
+    def _play(self, song):
+        time.sleep(song.duration)
+        with self.lock:
+            if not self.pause:
+                self.next()
 
-        self.play()
+    def _stop_song(self):
+        pass
 
-# play previous song
-    def prev_song(self):
-        if self.__play_thread is not None:
-            self.__play_thread_lock.acquire()
-            self.__is_playing = False
-            self.__play_thread.join()
-            self.__play_thread_lock.release()
-
-        self.__current_song_index -= 1
-# if we reach the first song we skip on the last song
-        if self.__current_song_index < 0:
-            self.__current_song_index = len(self.__songs) - 1
-
-        self.play()
-
-    def __play_current_song(self):
-        song = self.__songs[self.__current_song_index]
-        duration = song.duration
-        start_time = time.time()
-
-        while self.__is_playing and time.time() - start_time < duration:
-            time.sleep(0.1)
-
-        self.__is_playing = False
-        self.next_song()
+class PlaylistNode:
+    def __init__(self, song):
+        self.song = song
+        self.prev_node = None
+        self.next_node = None
