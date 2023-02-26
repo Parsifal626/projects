@@ -1,3 +1,5 @@
 fruits = [
-    {"Apple" : 130, "Avocado" : 50, "Banana" : 110, }
+    {'fruits': "Apple", 'calories' : 130,
+    {'fruits':"Avocado", 'calories': 50,
+     'fruits' ; "Banana", 'calories': 110, }
 ]
