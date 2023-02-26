@@ -1,4 +1,3 @@
-
 s = input('Type fruit ').lower
 while True:
     s in fruits[]
