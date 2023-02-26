@@ -1,13 +1,12 @@
-s = input('Type fruit ').lower
-while True:
-    s in fruits
-    break
-
+fruit = input('Type fruit ').lower
 
 
 fruits = [
-    {'fruits': "Apple", 'calories' : '130'},
-    {'fruits': "Avocado", 'calories': '50'},
-    {'fruits': "Banana", 'calories': '110'},
-    {'fruits': "Sweet Cherries" , 'calories': '100'}
+    {'fruit': "Apple", 'calories' : '130'},
+    {'fruit': "Avocado", 'calories': '50'},
+    {'fruit': "Banana", 'calories': '110'},
+    {'fruit': "Sweet Cherries" , 'calories': '100'}
     ]
+
+for fruit in fruits:
+    print(fruits['fruit'])
