@@ -1,12 +1,13 @@
 from flask import Flask, jsonify
 
+
 app = Flask(__name__)
 
 @app.route('/api/songs', methods=['GET'])
 def get_songs():
     # код для получения списка песен из конфигурационного файла
     # возвращает список песен в формате JSON
-    return jsonify(songs)
+    return jsonify(song)
 
 @app.route('/api/songs', methods=['POST'])
 def add_song():
