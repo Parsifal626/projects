@@ -1,5 +1,6 @@
 from flask import Flask, g, jsonify, request
 import sqlite3
+from playlist import *
 
 app = Flask(__name__)
 DATABASE = 'playlist.db'
