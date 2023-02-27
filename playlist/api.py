@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-@app.route('/api/songs', methods=['GET'])
+@app.route('/api/songs.db', methods=['GET'])
 def get_songs():
     songs = ['Song 1', 'Song 2']
     # код для получения списка песен из конфигурационного файла
