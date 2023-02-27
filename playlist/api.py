@@ -5,9 +5,10 @@ app = Flask(__name__)
 
 @app.route('/api/songs', methods=['GET'])
 def get_songs():
+    songs = ['Song 1', 'Song 2']
     # код для получения списка песен из конфигурационного файла
     # возвращает список песен в формате JSON
-    return jsonify(song)
+    return jsonify(songs)
 
 @app.route('/api/songs', methods=['POST'])
 def add_song():
@@ -43,3 +44,4 @@ def pause_song():
 def next_song():
     # код для перехода к следующей песне
     # возвращает статус 200 (OK) в случае успеха
+    return '', 200
