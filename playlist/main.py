@@ -1,6 +1,6 @@
 from playlist import *
 
-playlist = Playlist()
+playlist = Playlist.py
 
 playlist.add_song("Song 1", 180)
 playlist.add_song("Song 2", 240)
