@@ -1,4 +1,4 @@
-from playlist import Playlist
+from playlist import *
 
 playlist = Playlist()
 
