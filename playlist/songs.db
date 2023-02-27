@@ -1,8 +1,6 @@
--- creation table "songs"
-CREATE TABLE songs (
-    ID INTEGER PRIMARY KEY,
-     TEXT,
-    author TEXT,
-    title TEXT,
-    duration TIME
+CREATE TABLE playlist (
+    id INTEGER PRIMARY KEY,
+    author TEXT NOT NULL,
+    title TEXT NOT NULL,
+    duration INTEGER NOT NULL
 );
