@@ -1,0 +1,8 @@
+-- creation table "songs"
+CREATE TABLE songs (
+    ID INTEGER PRIMARY KEY,
+     TEXT,
+    author TEXT,
+    title TEXT,
+    duration TIME
+);
