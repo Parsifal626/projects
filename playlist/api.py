@@ -1,89 +1,58 @@
-from flask import Flask, g, jsonify, request
-import sqlite3
+from flask import Flask, jsonify, request
+from flask_sqlalchemy import SQLAlchemy
 from playlist import *
 
 app = Flask(__name__)
-DATABASE = 'playlist.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///music.db'
+db = SQLAlchemy(app)
 
-def connect_db():
-    return sqlite3.connect(DATABASE)
+class Track(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(50), nullable=False)
+    artist = db.Column(db.String(50), nullable=False)
+    duration = db.Column(db.Integer, nullable=False)
 
-def init_db():
-    with app.app_context():
-        db = get_db()
-        with app.open_resource('schema.sql', mode='r') as f:
-            db.cursor().executescript(f.read())
-        db.commit()
+    def __repr__(self):
+        return f'Track(id={self.id}, title={self.title}, artist={self.artist}, duration={self.duration})'
 
-def get_db():
-    if not hasattr(g, 'sqlite_db'):
-        g.sqlite_db = connect_db()
-    return g.sqlite_db
+@app.route('/tracks', methods=['GET'])
+def get_all_tracks():
+    tracks = Track.query.all()
+    return jsonify([track.__dict__ for track in tracks]), 200
 
-@app.teardown_appcontext
-def close_db(error):
-    if hasattr(g, 'sqlite_db'):
-        g.sqlite_db.close()
+@app.route('/tracks/<int:track_id>', methods=['GET'])
+def get_track(track_id):
+    track = Track.query.filter_by(id=track_id).first()
+    if track:
+        return jsonify(track.__dict__), 200
+    else:
+        return jsonify({'message': 'Track not found'}), 404
 
-@app.route('/api/songs', methods=['GET'])
-def get_songs():
-    db = get_db()
-    cur = db.execute('SELECT * FROM songs')
-    songs = cur.fetchall()
-    return jsonify(songs)
+@app.route('/tracks', methods=['POST'])
+def create_track():
+    data = request.get_json()
+    track = Track(title=data['title'], artist=data['artist'], duration=data['duration'])
+    db.session.add(track)
+    db.session.commit()
+    return jsonify(track.__dict__), 201
 
-@app.route('/api/songs/<int:id>', methods=['GET'])
-def get_song(id):
-    db = get_db()
-    cur = db.execute('SELECT * FROM songs WHERE id = ?', (id,))
-    song = cur.fetchone()
-    return jsonify(song)
-
-@app.route('/api/songs', methods=['POST'])
-def add_song():
-    title = request.json['title']
-    artist = request.json['artist']
-    duration = request.json['duration']
-
-    db = get_db()
-    db.execute('INSERT INTO songs (title, artist, duration) VALUES (?, ?, ?)',
-               [title, artist, duration])
-    db.commit()
-
-    return jsonify({'result': True})
-
-@app.route('/api/songs/<int:id>', methods=['PUT'])
-def update_song(id):
-    title = request.json['title']
-    artist = request.json['artist']
-    duration = request.json['duration']
-
-    db = get_db()
-    db.execute('UPDATE songs SET title = ?, artist = ?, duration = ? WHERE id = ?',
-               [title, artist, duration, id])
-    db.commit()
-
-    return jsonify({'result': True})
-
-@app.route('/api/songs/<int:id>', methods=['DELETE'])
-def delete_song(id):
-    db = get_db()
-    db.execute('DELETE FROM songs WHERE id = ?', [id])
-    db.commit()
-
-    return jsonify({'result': True})
-
-if __name__ == '__main__':
-    app.run(debug=True)
-
-
-    def get_all_songs(self) -> List[Song]:
-    """Возвращает все песни в плейлисте"""
-    return self._playlist.get_all_songs()
-
-def add_song(self, song_data: dict) -> Song:
-    """Добавляет новую песню в плейлист"""
-    song = Song(**song_data)
-    self._playlist.add_song(song)
-    return song
-
+@app.route('/tracks/int:track_id', methods=['PUT'])
+def update_track(track_id):
+    track = Track.query.filter_by(id=track_id).first()
+    if track:
+        data = request.get_json()
+        track.title = data.get('title', track.title)
+        track.artist = data.get('artist', track.artist)
+        track.duration = data.get('duration', track.duration)
+        db.session.commit()
+        return jsonify(track.dict), 200
+    else:
+        return jsonify({'message': 'Track not found'}), 404@app.route('/tracks/int:track_id', methods=['DELETE'])
+def delete_track(track_id):
+    track = Track.query.filter_by(id=track_id).first()
+    if track:
+        db.session.delete(track)
+        db.session.commit()
+        return jsonify({'message': 'Track deleted successfully'}), 200
+    else:
+        return jsonify({'message': 'Track not found'})
