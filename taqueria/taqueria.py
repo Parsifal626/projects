@@ -18,12 +18,11 @@ def main ():
                 if s in d:
                     amount += d[s]
                     print ('Total: $', end = '')
-                    print (amount)
-                if s == 'break':
-                     break
-
+                    print ('{:.2f}'.format(amount))
             except (EOFError, KeyError):
-                pass
+                print()
+                break
+
 
 main()
 
