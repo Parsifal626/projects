@@ -1,18 +1,24 @@
 def main():
 
+
     if percent_fuel == 0:
         print('E')
-    elif
+    elif percent_fuel == 100:
+        print('F')
+    else:
+        print(f"{percent_fuel}%")
+
+def percent():
+    s = input("What fractions? ")
+    x,y = s.split('/')
+    x = int(x)
+    y = int(y)
 
 
 
 
-s = input("What fractions? ")
-x,y = s.split('/')
-x = int(x)
-y = int(y)
-print (x)
-print (y)
+
+
 
 def main ():
     final_fuel = get_percent()
