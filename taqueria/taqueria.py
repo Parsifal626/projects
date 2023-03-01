@@ -7,7 +7,7 @@ def main ():
                 break
         except (EOFError, KeyError):
             pass
-    print(f'{s.values}%')
+    print(f'{d[s.values]}%')
 
 d = {
     "Baja Taco": 4.00,
