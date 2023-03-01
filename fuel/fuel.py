@@ -18,7 +18,7 @@ def percent():
         if fraction <= 1:
                 return fraction
         else:
-            pass
+            continue
 
     except (ValueError, ZeroDivisionError):
         pass
