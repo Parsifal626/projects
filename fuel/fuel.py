@@ -2,6 +2,9 @@ def main():
 
     if percent_fuel == 0:
         print('E')
+    elif
+
+
 
 
 s = input("What fractions? ")
