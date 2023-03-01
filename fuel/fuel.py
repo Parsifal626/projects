@@ -3,8 +3,8 @@ def main():
         s = input("What fractions? ")
         try:
             x,y = s.split('/')
-            x = float(x)
-            y = float(y)
+            x = int(x)
+            y = int(y)
             fraction = x / y
             if fraction <=1:
                 break
