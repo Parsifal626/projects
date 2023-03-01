@@ -1,5 +1,20 @@
 def main ():
-    s = {
+    while True:
+        try:
+            s = input("Item: ")
+            if s in d.key:
+                break
+        except (EOFError, KeyError):
+            pass
+        
+
+
+
+
+
+
+
+    d = {
     "Baja Taco": 4.00,
     "Burrito": 7.50,
     "Bowl": 8.50,
