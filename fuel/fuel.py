@@ -15,10 +15,12 @@ def percent():
         x = float(x)
         y = float(y)
         fraction = x / y
-        if fraction <= 1:
-                return fraction
+        while fraction > 1:
+                continue
         else:
-            continue
+            return fraction
+
+
 
     except (ValueError, ZeroDivisionError):
         pass
