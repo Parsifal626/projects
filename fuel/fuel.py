@@ -9,21 +9,24 @@ def main():
         print(f"{percent_fuel}%")
 
 def percent():
-    try:
-        s = input("What fractions? ")
-        x,y = s.split('/')
-        x = float(x)
-        y = float(y)
-        fraction = x / y
-        while fraction > 1:
-                continue
-        else:
-            return fraction
+    while True:
+        try:
+            s = input("What fractions? ")
+            x,y = s.split('/')
+            x = float(x)
+            y = float(y)
+            fraction = x / y
+            if fraction > 1:
+                return False
+            else:
+                return fraction
 
 
 
-    except (ValueError, ZeroDivisionError):
-        pass
+
+        except (ValueError, ZeroDivisionError):
+            s = input("What fractions? ")
+            pass
 
 main()
 
