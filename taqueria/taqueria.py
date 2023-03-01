@@ -19,6 +19,9 @@ def main ():
                     amount += d[s]
                     print ('Total: $', end = '')
                     print (amount)
+                if s == 'break':
+                     break
+
             except (EOFError, KeyError):
                 pass
 
