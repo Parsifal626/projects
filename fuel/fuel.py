@@ -16,7 +16,9 @@ def percent():
             x = float(x)
             y = float(y)
             fraction = x / y
-            if fraction > 1:
+            if fraction <= 1:
+                break
+            
                 return False
             else:
                 return fraction
