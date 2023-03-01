@@ -1,14 +1,5 @@
 def main ():
 
-    while True:
-        try:
-            s = input("Item: ")
-            if s in d.key:
-                break
-        except (EOFError, KeyError):
-            pass
-    print(f'{d[s.values]}%')
-
 d = {
     "Baja Taco": 4.00,
     "Burrito": 7.50,
@@ -20,6 +11,17 @@ d = {
     "Taco": 3.00,
     "Tortilla Salad": 8.00
         }
+
+    while True:
+        try:
+            s = input("Item: ")
+            if s in d.key:
+                break
+        except (EOFError, KeyError):
+            pass
+    print(f'{d[s.values]}%')
+
+
 
 
 
