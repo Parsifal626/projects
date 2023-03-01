@@ -9,10 +9,12 @@ def main():
         print(f"{percent_fuel}%")
 
 def percent():
-    s = input("What fractions? ")
-    x,y = s.split('/')
-    x = int(x)
-    y = int(y)
+    try:
+        s = input("What fractions? ")
+        x,y = s.split('/')
+        x = int(x)
+        y = int(y)
+        fraction = x/y
 
 
 
