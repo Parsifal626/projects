@@ -1,4 +1,5 @@
-s = ((int('Fraction? ')) *100)
-    while True :
-            break
-print(s + '%' )
+s = input("What fractions? ")
+x,y = int(s.split('/'))
+print (x)
+print (y)
+
