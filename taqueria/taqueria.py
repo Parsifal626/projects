@@ -11,12 +11,13 @@ d = {
     "Taco": 3.00,
     "Tortilla Salad": 8.00
         }
-
+amount = 0
     while True:
         try:
             s = input("Item: ").title()
             if s in d.key:
-                break
+                amount += d[item]
+                print ('Total: $', end = '')
         except (EOFError, KeyError):
             pass
     print(f'{d[s.values]}%')
