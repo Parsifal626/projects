@@ -14,7 +14,7 @@ d = {
 
     while True:
         try:
-            s = input("Item: ")
+            s = input("Item: ").title()
             if s in d.key:
                 break
         except (EOFError, KeyError):
