@@ -10,7 +10,7 @@ def main():
                 break
         except (ValueError, ZeroDivisionError):
             pass
-    percent_fuel = fraction * 100
+    percent_fuel = int(fraction * 100)
     if  percent_fuel <= 1:
             print('E')
     elif percent_fuel >= 99:
