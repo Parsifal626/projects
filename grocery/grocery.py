@@ -1,2 +1,8 @@
-def main ():
-    
+def main():
+    s = input('List: ').
+
+
+
+
+
+main()
