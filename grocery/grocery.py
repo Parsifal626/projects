@@ -1,5 +1,5 @@
 def main():
-    s = input('List: ').
+    s = input('List: ').upper()
 
 
 
