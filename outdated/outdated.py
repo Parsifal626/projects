@@ -20,7 +20,7 @@ while True:
             break
     except:
         try:
-            old_m, old_d, old_y = date.split(' ')
+            old_m, old_d, year = date.split(' ')
             for i in range(len(months)):
                 if old_m ==  months[i]:
                     month = i + 1
