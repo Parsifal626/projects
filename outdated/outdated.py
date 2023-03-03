@@ -23,7 +23,14 @@ def main():
               try:
                  old_m, old_d, old_y = date.split(' ')
                  for i in range(len(months)):
-                    if 
+                    if old_m ==  month[i]:
+                       month = i + 1
+                 day = old_d.replace(',', '')
+                 if ( 1<= int(month) <= 12) and ( 1<= int(day) <=31):
+                    break
+                except
+
+
 
 
 
