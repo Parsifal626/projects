@@ -16,7 +16,7 @@ while True:
     date = input('Date: ')
     try:
         month,day,year = date.split('/')
-        if(1<= int(month)<= 12) and (1<= int(day)<=31):
+        if(int(month) >=1  and int(month)<= 12) and (int(day) >=1 and int(day)<=31):
             break
     except:
         try:
@@ -25,7 +25,7 @@ while True:
                 if old_m ==  months[i]:
                     month = i + 1
                 day = old_d.replace(',', '')
-                if ( 1<= int(month) <= 12) and ( 1<= int(day) <=31):
+                if(int(month) >=1  and int(month)<= 12) and (int(day) >=1 and int(day)<=31):
                     break
         except:
             print()
