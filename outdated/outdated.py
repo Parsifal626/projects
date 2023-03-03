@@ -1,4 +1,3 @@
-
 months =  [
 "January",
 "February",
@@ -16,7 +15,7 @@ months =  [
 while True:
     date = input('Date: ')
     try:
-        month, day, year = date.split('/')
+        month,day,year = date.split('/')
         if(1<= int(month)<= 12) and (1<= int(day)<=31):
             break
     except:
@@ -31,5 +30,5 @@ while True:
         except:
             print()
             pass
-        
+
 print(f'{year}-{int(month):02}-{int(day):02}')
