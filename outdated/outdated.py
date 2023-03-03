@@ -31,4 +31,4 @@ while True:
         except:
                 print()
                 pass
-print(f'(year)-(int(month):02)-(int(day):02)')
+print(f'{year}-(int{month})-(int{day})')
