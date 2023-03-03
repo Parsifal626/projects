@@ -8,10 +8,9 @@ def main():
                 grocery[s] += 1
             else:
                 grocery[s] = 1
-
         except EOFError:
             for s in sorted(grocery.keys()):
-                print(grocery[s], s)
+                print(grocery[s], s.upper())
             break
 
 main()
