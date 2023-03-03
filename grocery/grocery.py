@@ -3,14 +3,14 @@ def main():
 
     while True:
         try:
-            s = input('List: ')
-            if s.upper() in grocery:
+            s = input('List: ').lower()
+            if s in grocery:
                 grocery[s] += 1
             else:
                 grocery[s] = 1
         except EOFError:
-            for s in sorted(grocery.keys()):
-                print(grocery[s], s.upper())
+            for key in sorted(grocery.keys()):
+                print(grocery[key], key.upper())
             break
 
 main()
