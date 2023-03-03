@@ -12,7 +12,7 @@ def main():
         else:
             grocery[s.upper()] = 1
 
-        for s in grocery.keys():
+        for s in sorted(grocery.keys()):
             print(grocery[s], s)
 
 
