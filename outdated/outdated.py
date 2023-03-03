@@ -14,9 +14,11 @@ def main():
     "December"
 ]
     while True:
+        s = input('Date: ')
         try:
-           s = input().
-           if '/' or '-' or ' ' in s:
+            month, day, year = date.split('/')
+
+
               s.split
 
         except:
