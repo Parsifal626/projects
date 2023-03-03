@@ -28,25 +28,9 @@ def main():
                  day = old_d.replace(',', '')
                  if ( 1<= int(month) <= 12) and ( 1<= int(day) <=31):
                     break
-                except
-
-
-
-
-
-              s.split
-
-        except:
-
-
-
-    for idx, mon in enumerate(s):
-
-
-
-
-
-
-
+                except:
+                 print()
+                 pass
+    print(f'(year)-(int(month):02)-(int(day):02)')
 
 main()
