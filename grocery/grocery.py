@@ -10,15 +10,8 @@ def main():
                 grocery[s] = 1
 
         except EOFError:
-            print()
             for s in sorted(grocery.keys()):
                 print(grocery[s], s)
-
             break
-
-
-
-
-
 
 main()
