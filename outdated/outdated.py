@@ -13,6 +13,13 @@ def main():
     "November",
     "December"
 ]
+    while True:
+        try:
+           s = input()
+           
+        except:
+
+
 
     for idx, mon in enumerate(s):
 
