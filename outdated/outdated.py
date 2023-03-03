@@ -15,8 +15,10 @@ def main():
 ]
     while True:
         try:
-           s = input()
-           
+           s = input().
+           if '/' or '-' or ' ' in s:
+              s.split
+
         except:
 
 
