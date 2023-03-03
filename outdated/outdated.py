@@ -14,7 +14,7 @@ def main():
     "December"
 ]
     while True:
-        s = input('Date: ')
+        date = input('Date: ')
         try:
             month, day, year = date.split('/')
             if(  1<= int(month) <= 12) and ( 1<= int(day) <=31):
