@@ -24,7 +24,6 @@ if isRandomFont == False:
 else:
     font = random.choice(figlet.getFonts())
 
-s = input('Input: ')
 
 print('Output: ')
 print(figlet.renderText(s))
