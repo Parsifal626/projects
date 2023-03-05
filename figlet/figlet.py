@@ -13,6 +13,7 @@ else:
 
 #List of fonts
 figlet.getFonts()
+
 s = input('Input: ')
 if isRandomFont == False:
     try:
