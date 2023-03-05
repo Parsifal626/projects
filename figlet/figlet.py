@@ -5,3 +5,4 @@ figlet = Figlet()
 
 s = input("Say something ")
 
+print(figlet(s))
