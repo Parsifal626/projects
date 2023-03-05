@@ -1,4 +1,4 @@
 import emoji
 
 s= input(" ")
-print(emoji.emojize(f""))
+print(emoji.emojize(f"{s}"))
