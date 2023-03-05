@@ -19,7 +19,8 @@ if isRandomFont == False:
         figlet.setFont(font=sys.argv[2])
         print(figlet.renderText(s))
     except:
-        sys.exit("Invalid usage")
+        print("Invalid usage")
+        sys.exit(1)
 else:
     font = random.choice(figlet.getFonts())
     print('Output: ')
