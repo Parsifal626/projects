@@ -11,9 +11,6 @@ elif len(sys.argv) == 3 and (sys.argv[1] == '-f' or sys.argv[1] == '--font'):
 else:
     sys.exit(1)
 
-s = input('Input: ')
-
-
 #List of fonts
 figlet.getFonts()
 s = input('Input: ')
@@ -25,5 +22,5 @@ if isRandomFont == False:
         sys.exit("Invalid usage")
 else:
     font = random.choice(figlet.getFonts())
-    print(figlet.renderText(s))
+    print(f'Output: {figlet.renderText(s)}')
 
