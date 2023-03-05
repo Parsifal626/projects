@@ -1,8 +1,9 @@
 import sys
-from figlet import Figlet
 
-figlet = Figlet()
 
-s = input("Say something ")
+if len(sys.argv) == 1:
+    isRandomFont = True
+elif len(sys.argv) == 3:
+    isRandomFont = False
 
-print(figlet(s))
+print(isRandomFont)
