@@ -1,5 +1,8 @@
 import sys
+from figlet import Figlet
+import random
 
+figlet = Figlet()
 
 if len(sys.argv) == 1:
     isRandomFont = True
@@ -20,3 +23,7 @@ if isRandomFont == False:
         print(figlet.renderText(s))
     except:
         sys.exit("Invalid usage")
+else:(figlet.choice())
+    font = random.choice
+
+s = input('Input: ')
