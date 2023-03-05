@@ -3,6 +3,7 @@ from pyfiglet import Figlet
 import random
 
 figlet = Figlet()
+#List of fonts
 figlet.getFonts()
 if len(sys.argv) == 1:
     isRandomFont = True
@@ -12,12 +13,7 @@ else:
     print("Invalid usage")
     sys.exit(1)
 
-#List of fonts
-
-
 s = input('Input: ')
-
-
 if isRandomFont == False:
     try:
         figlet.setFont(font=sys.argv[2])
