@@ -22,5 +22,6 @@ if isRandomFont == False:
         sys.exit("Invalid usage")
 else:
     font = random.choice(figlet.getFonts())
-    print(f'Output: {figlet.renderText(s)}')
+    print('Output: ')
+    print(figlet.renderText(s))
 
