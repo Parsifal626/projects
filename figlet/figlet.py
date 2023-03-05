@@ -3,17 +3,17 @@ from pyfiglet import Figlet
 import random
 
 figlet = Figlet()
-
+figlet.getFonts()
 if len(sys.argv) == 1:
     isRandomFont = True
-elif len(sys.argv) == 3 and (sys.argv[1] == '-f' or sys.argv[1] == '--font'):
+elif len(sys.argv) == 3 and (sys.argv[1] == '-f' or sys.argv[1] == '--font') and (sys.argv[2] in figlet.getFonts()):
     isRandomFont = False
 else:
     print("Invalid usage")
     sys.exit(1)
 
 #List of fonts
-figlet.getFonts()
+
 
 s = input('Input: ')
 
