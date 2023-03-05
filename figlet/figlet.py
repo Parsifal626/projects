@@ -10,3 +10,10 @@ else:
 
 s = input('Input: ')
 
+
+#List of fonts
+figlet.getFonts()
+
+if isRandomFont == False:
+    figlet.setFont(font=sys.argv[2])
+    print(figlet.renderText(s))
