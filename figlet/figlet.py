@@ -23,6 +23,9 @@ if isRandomFont == False:
         sys.exit(1)
 else:
     font = random.choice(figlet.getFonts())
-    print('Output: ')
-    print(figlet.renderText(s))
+
+s = input('Input: ')
+
+print('Output: ')
+print(figlet.renderText(s))
 
