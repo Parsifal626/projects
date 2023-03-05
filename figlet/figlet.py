@@ -23,7 +23,7 @@ if isRandomFont == False:
         figlet.setFont(font=sys.argv[2])
     except:
         print("Invalid usage")
-        sys.exit(2)
+        sys.exit(1)
 else:
     font = random.choice(figlet.getFonts())
 
