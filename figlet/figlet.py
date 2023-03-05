@@ -16,14 +16,14 @@ s = input('Input: ')
 
 #List of fonts
 figlet.getFonts()
-
+s = input('Input: ')
 if isRandomFont == False:
     try:
         figlet.setFont(font=sys.argv[2])
         print(figlet.renderText(s))
     except:
         sys.exit("Invalid usage")
-else:(figlet.choice())
-    font = random.choice
+else:
+    font = random.choice(figlet.getFonts())
+    print(figlet.renderText(s))
 
-s = input('Input: ')
