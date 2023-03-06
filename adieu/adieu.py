@@ -11,7 +11,6 @@ while True:
         name = input("Name:  ")
         names.append(name)
     except EOFError:
-        print()
         break
         # new line. If line is empty stop the loop
 output = p.join(names)
