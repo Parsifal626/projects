@@ -2,8 +2,9 @@ import random
 
 
 def main():
-    # level = get_level()
-    math_problem(2,8)
+    level = get_level()
+    score = simulate_game(level)
+    print ("Score:", score)
 
 
 def get_level():
@@ -45,11 +46,16 @@ def math_problem(x, y):
     print(f"{x}+{y} = {x+y}")
     return False
 
-def simulate_game(level)
+def simulate_game(level):
     round = 1
     score = 0
     while round<=10:
-        try:
+        x,y = generate_integer(level)
+        response = math_problem(x,y)
+        if response == True:
+            score +=1
+        round +=1
+    return score
 
 
 
