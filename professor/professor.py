@@ -48,10 +48,9 @@ def math_problem(x, y):
 def simulate_game(level)
     round = 1
     score = 0
-    while tries <=3:
+    while round<=10:
         try:
-            answer = int(input(f"{x} + {y} = "))
-            if answer == (x+y):
+
 
 
 
