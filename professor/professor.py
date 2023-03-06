@@ -42,6 +42,13 @@ def math_problem(x, y):
         except:
                 tries +=1
                 print("EEE")
+    print(f"{x}+{y} = {x+y}")
+    return False
+
+def simulate_game(level)
+    round = 1
+    score = 0
+    
 
 
 
