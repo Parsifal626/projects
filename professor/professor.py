@@ -29,7 +29,17 @@ def generate_integer(level):
     return x,y
 
 def math_problem(x, y):
-    
+    tries = 1
+    while tries <=3:
+        try:
+            answer = int(input(f"{x} + {y}= "))
+            if answer == (x+y):
+                return True
+            else:
+                tries +=1
+                print("EEE")
+                
+
 
 
 
