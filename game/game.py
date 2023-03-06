@@ -5,27 +5,24 @@ import random
 #random integer between 1 an 100
 
 while True:
-    level = input("Level: ")
-
-    if (int(level) < 0 or not level.isdecimal()):
-        level = input("Level: ")
-
-    guess = input("Guess: ")
-    if not int(guess.isdecimal()) or int(guess) < 0:
-        guess = input("Guess: ")
-
-
-    number = random.randint(1, int(level))
-    while True:
-        if int(guess) > number:
-            print("Too large!")
-            continue
-        elif int(guess) < number:
-            print("Too small!")
-            continue
-        else:
-            print("Just right!")
+    try:
+        level =int(input("Level: "))
+        if level > 0:
             break
+    except:
+        pass
+
+# number = random.randint(1, level)
+
+#         if int(guess) > number:
+#             print("Too large!")
+
+#         elif int(guess) < number:
+#             print("Too small!")
+#             continue
+#         else:
+#             print("Just right!")
+#             break
 
 
 
