@@ -12,6 +12,7 @@ while True:
         names.append(name)
     except EOFError:
         print()
+        break
 
 
 
