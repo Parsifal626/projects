@@ -1,6 +1,7 @@
 import inflect
-
 p = inflect.engine()
+
+
 # Create List
 names = []
 # Loop forever
@@ -14,6 +15,6 @@ while True:
         break
         # new line. If line is empty stop the loop
 output = p.join(names)
-print("Adieu, adieu, to" + output)
+print("Adieu, adieu, to " + output)
 
 #printing
