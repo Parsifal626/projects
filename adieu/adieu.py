@@ -3,7 +3,6 @@ import inflect
 p = inflect.engine()
 # Create List
 names = []
-
 # Loop forever
 while True:
     try:
