@@ -12,7 +12,7 @@ while True:
     except:
         pass
 
-# number = random.randint(1, level)
+number = random.randint(1, level)
 
 #         if int(guess) > number:
 #             print("Too large!")
