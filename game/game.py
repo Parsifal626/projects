@@ -16,14 +16,17 @@ while True:
 
 
     number = random.randint(1, int(level))
+    while True:
+        if int(guess) > number:
+            print("Too large!")
+            continue
+        elif int(guess) < number:
+            print("Too small!")
+            continue
+        else:
+            print("Just right!")
+            break
 
-    if int(guess) > number:
-        print("Too large!")
-    elif int(guess) < number:
-        print("Too small!")
-    else:
-        print("Just right!")
-        break
 
 
 
