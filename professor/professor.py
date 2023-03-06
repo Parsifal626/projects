@@ -28,6 +28,11 @@ def generate_integer(level):
         y = random.randint(100,999)
     return x,y
 
+def math_problem(x, y):
+    
+
+
+
 
 
 if __name__ == "__main__":
