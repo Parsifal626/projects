@@ -2,6 +2,7 @@ import inflect
 
 p = inflect.engine()
 
+names = []
 
 # Create List
 
@@ -10,4 +11,10 @@ p = inflect.engine()
 
 
 
-        
+        # input
+
+
+        # new line. If line is empty stop the loop
+
+
+#printing
