@@ -9,10 +9,11 @@ def get_level():
     while True:
         try:
             level =int(input("Level: "))
-            if level > 0:
+            if level in [1,2,3]:
                 break
         except:
             pass
+    return level
 
 
 def generate_integer(level):
