@@ -56,9 +56,5 @@ def simulate_game(level):
             score +=1
         round +=1
     return score
-
-
-
-
 if __name__ == "__main__":
     main()
