@@ -10,10 +10,12 @@ while True:
         # input
         name = input("Name:  ")
         names.append(name)
+        output = p.join(names)
     except EOFError:
+        print('\n')
+        print("Adieu, adieu, to " + output)
         break
-        # new line. If line is empty stop the loop
-output = p.join(names)
-print("Adieu, adieu, to " + output)
+    else:
+        continue
 
 #printing
