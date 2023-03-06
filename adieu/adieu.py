@@ -14,11 +14,9 @@ while True:
         print()
         break
 
-
-
-
-
         # new line. If line is empty stop the loop
+output = p.join(names)
 
+print(output)
 
 #printing
