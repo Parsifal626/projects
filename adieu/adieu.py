@@ -15,6 +15,6 @@ while True:
         break
         # new line. If line is empty stop the loop
 output = p.join(names)
-print(output)
+print("Adieu, adieu, to" + output)
 
 #printing
